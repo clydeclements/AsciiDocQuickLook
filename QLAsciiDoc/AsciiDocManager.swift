@@ -13,34 +13,41 @@ import QuickLook
     private let url: NSURL
     
     public init(withUrl url: NSURL) {
-        NSLog("In AsciiDocManager.init...")
         self.url = url
     }
     
-    private func buildData() -> NSData? {
-        NSLog("In AsciiDocManager.buildData...")
-        guard let content = try? String(contentsOfFile: "/Users/clyde/Documents/Projects/QLAsciiDoc/compiled-document.html", encoding: NSUTF8StringEncoding) else {
-            NSLog("Unable to read file; returning nil")
+    private func buildData(type: String) -> NSData? {
+        let task = NSTask()
+        let pipe = NSPipe()
+        
+        task.launchPath = "/usr/local/bin/asciidoctor"
+        task.arguments = ["-b", "html5", "-a", "nofooter", "-o", "-", url.path!]
+        task.standardOutput = pipe
+        task.launch()
+        task.waitUntilExit()
+        
+        if (task.terminationStatus == 0) {
+            let handle = pipe.fileHandleForReading
+            let data = handle.readDataToEndOfFile()
+            let status: String = "Termination status: " + String(task.terminationStatus)
+            let htmlContent = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
+            NSLog("File converted to HTML")
+            NSLog(status)
+            NSLog(htmlContent)
+            return data
+        } else {
+            let msg = "Unable to create data for " + type + "; returning nil"
+            NSLog(msg)
             return nil
         }
-        NSLog("File content read")
-        NSLog("%@", content)
-        if let data = content.dataUsingEncoding(NSUTF8StringEncoding) {
-            NSLog("Data created")
-            //let dataPtr = CFDataCreate(kCFAllocatorDefault, UnsafePointer<UInt8>(data.bytes), data.length)
-            //return dataPtr
-            return data
-        }
-        NSLog("Unable to create data; returning nil")
-        return nil
     }
     
     public func buildPreview() -> NSData? {
-        return buildData()
+        return buildData("preview")
     }
     
     public func buildThumbnail() -> NSData? {
-        return buildData()
+        return buildData("thumbnail")
     }
     
     public func buildPreviewProperties() -> CFDictionaryRef {
