@@ -71,6 +71,8 @@
 			</array>
 			<key>UTTypeDescription</key>
 			<string>AsciiDoc document</string>
+			<key>UTTypeIconFile</key>
+			<string>public.text.icns</string>
 			<key>UTTypeIdentifier</key>
 			<string>org.asciidoc</string>
 			<key>UTTypeTagSpecification</key>
