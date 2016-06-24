@@ -11,7 +11,8 @@
 			<string>QLGenerator</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>SUPPORTED_UTI_TYPE</string>
+				<string>org.asciidoc</string>
+				<string>dyn.ah62d4rv4ge80c65drfy0k55d</string>
 			</array>
 		</dict>
 	</array>
@@ -47,10 +48,12 @@
 	</dict>
 	<key>CFPlugInUnloadFunction</key>
 	<string></string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2016 Clyde Clements. All rights reserved.</string>
 	<key>QLNeedsToBeRunInMainThread</key>
-	<false/>
+	<true/>
 	<key>QLPreviewHeight</key>
 	<real>600</real>
 	<key>QLPreviewWidth</key>
@@ -59,5 +62,26 @@
 	<false/>
 	<key>QLThumbnailMinimumSize</key>
 	<real>17</real>
+	<key>UTImportedTypeDeclarations</key>
+	<array>
+		<dict>
+			<key>UTTypeConformsTo</key>
+			<array>
+				<string>public.plain-text</string>
+			</array>
+			<key>UTTypeDescription</key>
+			<string>AsciiDoc document</string>
+			<key>UTTypeIdentifier</key>
+			<string>org.asciidoc</string>
+			<key>UTTypeTagSpecification</key>
+			<dict>
+				<key>public.filename-extension</key>
+				<array>
+					<string>asciidoc</string>
+					<string>adoc</string>
+				</array>
+			</dict>
+		</dict>
+	</array>
 </dict>
 </plist>

@@ -7,17 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C2D158ED1D1B1AF2009BC66B /* GenerateThumbnailForURL.c in Sources */ = {isa = PBXBuildFile; fileRef = C2D158EC1D1B1AF2009BC66B /* GenerateThumbnailForURL.c */; };
-		C2D158EF1D1B1AF2009BC66B /* GeneratePreviewForURL.c in Sources */ = {isa = PBXBuildFile; fileRef = C2D158EE1D1B1AF2009BC66B /* GeneratePreviewForURL.c */; };
+		C2D158ED1D1B1AF2009BC66B /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D158EC1D1B1AF2009BC66B /* GenerateThumbnailForURL.m */; };
+		C2D158EF1D1B1AF2009BC66B /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D158EE1D1B1AF2009BC66B /* GeneratePreviewForURL.m */; };
 		C2D158F11D1B1AF2009BC66B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C2D158F01D1B1AF2009BC66B /* main.c */; };
+		C2D158FA1D1B1CFC009BC66B /* AsciiDocManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D158F91D1B1CFC009BC66B /* AsciiDocManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C2D158E91D1B1AF2009BC66B /* QLAsciiDoc.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QLAsciiDoc.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2D158EC1D1B1AF2009BC66B /* GenerateThumbnailForURL.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GenerateThumbnailForURL.c; sourceTree = "<group>"; };
-		C2D158EE1D1B1AF2009BC66B /* GeneratePreviewForURL.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = GeneratePreviewForURL.c; sourceTree = "<group>"; };
+		C2D158EC1D1B1AF2009BC66B /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
+		C2D158EE1D1B1AF2009BC66B /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
 		C2D158F01D1B1AF2009BC66B /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C2D158F21D1B1AF2009BC66B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2D158F81D1B1CFC009BC66B /* QLAsciiDoc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QLAsciiDoc-Bridging-Header.h"; sourceTree = "<group>"; };
+		C2D158F91D1B1CFC009BC66B /* AsciiDocManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsciiDocManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,10 +53,12 @@
 		C2D158EB1D1B1AF2009BC66B /* QLAsciiDoc */ = {
 			isa = PBXGroup;
 			children = (
-				C2D158EC1D1B1AF2009BC66B /* GenerateThumbnailForURL.c */,
-				C2D158EE1D1B1AF2009BC66B /* GeneratePreviewForURL.c */,
+				C2D158EC1D1B1AF2009BC66B /* GenerateThumbnailForURL.m */,
+				C2D158EE1D1B1AF2009BC66B /* GeneratePreviewForURL.m */,
+				C2D158F91D1B1CFC009BC66B /* AsciiDocManager.swift */,
 				C2D158F01D1B1AF2009BC66B /* main.c */,
 				C2D158F21D1B1AF2009BC66B /* Info.plist */,
+				C2D158F81D1B1CFC009BC66B /* QLAsciiDoc-Bridging-Header.h */,
 			);
 			path = QLAsciiDoc;
 			sourceTree = "<group>";
@@ -100,6 +105,7 @@
 				TargetAttributes = {
 					C2D158E81D1B1AF2009BC66B = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = LYJQR9E3B7;
 					};
 				};
 			};
@@ -135,8 +141,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2D158ED1D1B1AF2009BC66B /* GenerateThumbnailForURL.c in Sources */,
-				C2D158EF1D1B1AF2009BC66B /* GeneratePreviewForURL.c in Sources */,
+				C2D158ED1D1B1AF2009BC66B /* GenerateThumbnailForURL.m in Sources */,
+				C2D158EF1D1B1AF2009BC66B /* GeneratePreviewForURL.m in Sources */,
+				C2D158FA1D1B1CFC009BC66B /* AsciiDocManager.swift in Sources */,
 				C2D158F11D1B1AF2009BC66B /* main.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -228,11 +235,16 @@
 		C2D158F61D1B1AF2009BC66B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = QLAsciiDoc/Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.QLAsciiDoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QLAsciiDoc/QLAsciiDoc-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = qlgenerator;
 			};
 			name = Debug;
@@ -240,11 +252,15 @@
 		C2D158F71D1B1AF2009BC66B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = QLAsciiDoc/Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.QLAsciiDoc;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "QLAsciiDoc/QLAsciiDoc-Bridging-Header.h";
 				WRAPPER_EXTENSION = qlgenerator;
 			};
 			name = Release;
