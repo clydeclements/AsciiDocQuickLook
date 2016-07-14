@@ -3,7 +3,7 @@
 #import <QuickLook/QuickLook.h>
 #import <Cocoa/Cocoa.h>
 #import <WebKit/WebKit.h>
-#import "QLAsciiDoc-Swift.h"
+#import "AsciiDocQuickLook-Swift.h"
 
 OSStatus GenerateThumbnailForURL(void *thisInterface, QLThumbnailRequestRef thumbnail, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options, CGSize maxSize);
 void CancelThumbnailGeneration(void *thisInterface, QLThumbnailRequestRef thumbnail);

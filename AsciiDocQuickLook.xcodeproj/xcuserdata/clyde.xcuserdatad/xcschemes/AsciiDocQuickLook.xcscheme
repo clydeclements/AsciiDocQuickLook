@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C2D158E81D1B1AF2009BC66B"
-               BuildableName = "QLAsciiDoc.qlgenerator"
-               BlueprintName = "QLAsciiDoc"
-               ReferencedContainer = "container:QLAsciiDoc.xcodeproj">
+               BuildableName = "AsciiDoc.qlgenerator"
+               BlueprintName = "AsciiDoc"
+               ReferencedContainer = "container:AsciiDocQuickLook.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -50,9 +50,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C2D158E81D1B1AF2009BC66B"
-            BuildableName = "QLAsciiDoc.qlgenerator"
-            BlueprintName = "QLAsciiDoc"
-            ReferencedContainer = "container:QLAsciiDoc.xcodeproj">
+            BuildableName = "AsciiDoc.qlgenerator"
+            BlueprintName = "AsciiDoc"
+            ReferencedContainer = "container:AsciiDocQuickLook.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <CommandLineArguments>
@@ -73,7 +73,7 @@
             isEnabled = "YES">
          </CommandLineArgument>
          <CommandLineArgument
-            argument = "$HOME/Documents/Projects/QLAsciiDoc/test.asciidoc"
+            argument = "$HOME/Documents/Projects/AsciiDocQuickLook/test.asciidoc"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
@@ -97,9 +97,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C2D158E81D1B1AF2009BC66B"
-            BuildableName = "QLAsciiDoc.qlgenerator"
-            BlueprintName = "QLAsciiDoc"
-            ReferencedContainer = "container:QLAsciiDoc.xcodeproj">
+            BuildableName = "AsciiDoc.qlgenerator"
+            BlueprintName = "AsciiDoc"
+            ReferencedContainer = "container:AsciiDocQuickLook.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

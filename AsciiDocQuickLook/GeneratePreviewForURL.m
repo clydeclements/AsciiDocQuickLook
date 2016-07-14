@@ -2,7 +2,7 @@
 #import <CoreServices/CoreServices.h>
 #import <QuickLook/QuickLook.h>
 #import <Cocoa/Cocoa.h>
-#import "QLAsciiDoc-Swift.h"
+#import "AsciiDocQuickLook-Swift.h"
 
 OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options);
 void CancelPreviewGeneration(void *thisInterface, QLPreviewRequestRef preview);

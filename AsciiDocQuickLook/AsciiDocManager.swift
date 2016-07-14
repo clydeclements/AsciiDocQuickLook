@@ -1,6 +1,6 @@
 //
 //  AsciiDocManager.swift
-//  QLAsciiDoc
+//  AsciiDocQuickLook
 //
 //  Created by Clyde Clements on 2016-06-22.
 //  Copyright © 2016 Clyde Clements. All rights reserved.

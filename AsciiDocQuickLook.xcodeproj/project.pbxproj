@@ -14,12 +14,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C2D158E91D1B1AF2009BC66B /* QLAsciiDoc.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QLAsciiDoc.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2D158E91D1B1AF2009BC66B /* AsciiDoc.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsciiDoc.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2D158EC1D1B1AF2009BC66B /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
 		C2D158EE1D1B1AF2009BC66B /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
 		C2D158F01D1B1AF2009BC66B /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C2D158F21D1B1AF2009BC66B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2D158F81D1B1CFC009BC66B /* QLAsciiDoc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "QLAsciiDoc-Bridging-Header.h"; sourceTree = "<group>"; };
+		C2D158F81D1B1CFC009BC66B /* AsciiDocQuickLook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsciiDocQuickLook-Bridging-Header.h"; sourceTree = "<group>"; };
 		C2D158F91D1B1CFC009BC66B /* AsciiDocManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsciiDocManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -37,7 +37,7 @@
 		C2D158DF1D1B1AF2009BC66B = {
 			isa = PBXGroup;
 			children = (
-				C2D158EB1D1B1AF2009BC66B /* QLAsciiDoc */,
+				C2D158EB1D1B1AF2009BC66B /* AsciiDocQuickLook */,
 				C2D158EA1D1B1AF2009BC66B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,12 +45,12 @@
 		C2D158EA1D1B1AF2009BC66B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C2D158E91D1B1AF2009BC66B /* QLAsciiDoc.qlgenerator */,
+				C2D158E91D1B1AF2009BC66B /* AsciiDoc.qlgenerator */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C2D158EB1D1B1AF2009BC66B /* QLAsciiDoc */ = {
+		C2D158EB1D1B1AF2009BC66B /* AsciiDocQuickLook */ = {
 			isa = PBXGroup;
 			children = (
 				C2D158EC1D1B1AF2009BC66B /* GenerateThumbnailForURL.m */,
@@ -58,9 +58,9 @@
 				C2D158F91D1B1CFC009BC66B /* AsciiDocManager.swift */,
 				C2D158F01D1B1AF2009BC66B /* main.c */,
 				C2D158F21D1B1AF2009BC66B /* Info.plist */,
-				C2D158F81D1B1CFC009BC66B /* QLAsciiDoc-Bridging-Header.h */,
+				C2D158F81D1B1CFC009BC66B /* AsciiDocQuickLook-Bridging-Header.h */,
 			);
-			path = QLAsciiDoc;
+			path = AsciiDocQuickLook;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -76,9 +76,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C2D158E81D1B1AF2009BC66B /* QLAsciiDoc */ = {
+		C2D158E81D1B1AF2009BC66B /* AsciiDoc*/ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C2D158F51D1B1AF2009BC66B /* Build configuration list for PBXNativeTarget "QLAsciiDoc" */;
+			buildConfigurationList = C2D158F51D1B1AF2009BC66B /* Build configuration list for PBXNativeTarget "AsciiDoc" */;
 			buildPhases = (
 				C2D158E41D1B1AF2009BC66B /* Sources */,
 				C2D158E51D1B1AF2009BC66B /* Frameworks */,
@@ -89,9 +89,9 @@
 			);
 			dependencies = (
 			);
-			name = QLAsciiDoc;
-			productName = QLAsciiDoc;
-			productReference = C2D158E91D1B1AF2009BC66B /* QLAsciiDoc.qlgenerator */;
+			name = AsciiDoc;
+			productName = AsciiDoc;
+			productReference = C2D158E91D1B1AF2009BC66B /* AsciiDoc.qlgenerator */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -109,7 +109,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C2D158E31D1B1AF2009BC66B /* Build configuration list for PBXProject "QLAsciiDoc" */;
+			buildConfigurationList = C2D158E31D1B1AF2009BC66B /* Build configuration list for PBXProject "AsciiDocQuickLook" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -121,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C2D158E81D1B1AF2009BC66B /* QLAsciiDoc */,
+				C2D158E81D1B1AF2009BC66B /* AsciiDoc*/,
 			);
 		};
 /* End PBXProject section */
@@ -238,12 +238,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = QLAsciiDoc/Info.plist;
+				INFOPLIST_FILE = AsciiDocQuickLook/Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.QLAsciiDoc;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "QLAsciiDoc/QLAsciiDoc-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocQuickLook;
+				PRODUCT_NAME = AsciiDoc;
+				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocQuickLook/AsciiDocQuickLook-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)QuickLook-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = qlgenerator;
 			};
@@ -255,12 +256,13 @@
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
-				INFOPLIST_FILE = QLAsciiDoc/Info.plist;
+				INFOPLIST_FILE = AsciiDocQuickLook/Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.QLAsciiDoc;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "QLAsciiDoc/QLAsciiDoc-Bridging-Header.h";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocQuickLook;
+				PRODUCT_NAME = AsciiDoc;
+				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocQuickLook/AsciiDocQuickLook-Bridging-Header.h";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)QuickLook-Swift.h";
 				WRAPPER_EXTENSION = qlgenerator;
 			};
 			name = Release;
@@ -268,7 +270,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C2D158E31D1B1AF2009BC66B /* Build configuration list for PBXProject "QLAsciiDoc" */ = {
+		C2D158E31D1B1AF2009BC66B /* Build configuration list for PBXProject "AsciiDocQuickLook" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C2D158F31D1B1AF2009BC66B /* Debug */,
@@ -277,13 +279,14 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C2D158F51D1B1AF2009BC66B /* Build configuration list for PBXNativeTarget "QLAsciiDoc" */ = {
+		C2D158F51D1B1AF2009BC66B /* Build configuration list for PBXNativeTarget "AsciiDoc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C2D158F61D1B1AF2009BC66B /* Debug */,
 				C2D158F71D1B1AF2009BC66B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
