@@ -11,17 +11,32 @@ import QuickLook
 
 @objc public class AsciiDocManager: NSObject {
     private let url: NSURL
+    private let configDir: String
     
     public init(withUrl url: NSURL) {
         self.url = url
+        //configDir = "\(NSHomeDirectory())/.asciidoctor"
+        configDir = "/Users/clyde/.asciidoctor"
+        //self.configDir = "TEST"
+        // TODO: let configPath = "\(NSHomeDirectory())/.asciidoc.qlconf"
     }
     
     private func buildData(type: String) -> NSData? {
         let task = NSTask()
         let pipe = NSPipe()
         
+        let docInfoDirAttribute = "docinfodir=\(configDir)"
+        let loadLibrary = "\(configDir)/devonthink-uri-processor.rb"
         task.launchPath = "/usr/local/bin/asciidoctor"
+        task.arguments = ["-b", "html5",
+                          "-a", "nofooter",
+                          "-a", "allow-uri-read", "-a", "data-uri",
+                          "-a", docInfoDirAttribute, "-a", "docinfo1",
+                          "-r", loadLibrary,
+                          "-o", "-", url.path!]
+/*
         task.arguments = ["-b", "html5", "-a", "nofooter", "-o", "-", url.path!]
+ */
         task.standardOutput = pipe
         task.launch()
         task.waitUntilExit()
