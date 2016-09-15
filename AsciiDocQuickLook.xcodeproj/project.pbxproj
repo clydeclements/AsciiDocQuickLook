@@ -76,7 +76,7 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		C2D158E81D1B1AF2009BC66B /* AsciiDoc*/ = {
+		C2D158E81D1B1AF2009BC66B /* AsciiDoc */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = C2D158F51D1B1AF2009BC66B /* Build configuration list for PBXNativeTarget "AsciiDoc" */;
 			buildPhases = (
@@ -121,7 +121,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C2D158E81D1B1AF2009BC66B /* AsciiDoc*/,
+				C2D158E81D1B1AF2009BC66B /* AsciiDoc */,
 			);
 		};
 /* End PBXProject section */
