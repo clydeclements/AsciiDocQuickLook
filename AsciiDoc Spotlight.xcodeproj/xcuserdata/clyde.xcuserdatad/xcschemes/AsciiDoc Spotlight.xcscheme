@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "C2805B3C1E159885002CE600"
-               BuildableName = "AsciiDoc Spotlight.mdimporter"
-               BlueprintName = "AsciiDoc Spotlight"
+               BuildableName = "AsciiDoc.mdimporter"
+               BlueprintName = "AsciiDoc"
                ReferencedContainer = "container:AsciiDoc Spotlight.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,8 +46,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C2805B3C1E159885002CE600"
-            BuildableName = "AsciiDoc Spotlight.mdimporter"
-            BlueprintName = "AsciiDoc Spotlight"
+            BuildableName = "AsciiDoc.mdimporter"
+            BlueprintName = "AsciiDoc"
             ReferencedContainer = "container:AsciiDoc Spotlight.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -64,8 +64,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "C2805B3C1E159885002CE600"
-            BuildableName = "AsciiDoc Spotlight.mdimporter"
-            BlueprintName = "AsciiDoc Spotlight"
+            BuildableName = "AsciiDoc.mdimporter"
+            BlueprintName = "AsciiDoc"
             ReferencedContainer = "container:AsciiDoc Spotlight.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

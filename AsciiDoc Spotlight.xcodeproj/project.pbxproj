@@ -13,7 +13,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C2805B3D1E159885002CE600 /* AsciiDoc Spotlight.mdimporter */ = {isa = PBXFileReference; explicitFileType = "wrapper.spotlight-importer"; includeInIndex = 0; path = "AsciiDoc Spotlight.mdimporter"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2805B3D1E159885002CE600 /* AsciiDoc.mdimporter */ = {isa = PBXFileReference; explicitFileType = "wrapper.spotlight-importer"; includeInIndex = 0; path = AsciiDoc.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2805B411E159885002CE600 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C2805B431E159885002CE600 /* GetMetadataForFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMetadataForFile.m; sourceTree = "<group>"; };
 		C2805B451E159885002CE600 /* MySpotlightImporter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MySpotlightImporter.h; sourceTree = "<group>"; };
@@ -44,7 +44,7 @@
 		C2805B3E1E159885002CE600 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C2805B3D1E159885002CE600 /* AsciiDoc Spotlight.mdimporter */,
+				C2805B3D1E159885002CE600 /* AsciiDoc.mdimporter */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -73,9 +73,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C2805B3C1E159885002CE600 /* AsciiDoc Spotlight */ = {
+		C2805B3C1E159885002CE600 /* AsciiDoc */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C2805B4C1E159885002CE600 /* Build configuration list for PBXNativeTarget "AsciiDoc Spotlight" */;
+			buildConfigurationList = C2805B4C1E159885002CE600 /* Build configuration list for PBXNativeTarget "AsciiDoc" */;
 			buildPhases = (
 				C2805B391E159885002CE600 /* Sources */,
 				C2805B3A1E159885002CE600 /* Frameworks */,
@@ -85,9 +85,9 @@
 			);
 			dependencies = (
 			);
-			name = "AsciiDoc Spotlight";
+			name = AsciiDoc;
 			productName = "AsciiDoc Spotlight";
-			productReference = C2805B3D1E159885002CE600 /* AsciiDoc Spotlight.mdimporter */;
+			productReference = C2805B3D1E159885002CE600 /* AsciiDoc.mdimporter */;
 			productType = "com.apple.product-type.spotlight-importer";
 		};
 /* End PBXNativeTarget section */
@@ -118,7 +118,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C2805B3C1E159885002CE600 /* AsciiDoc Spotlight */,
+				C2805B3C1E159885002CE600 /* AsciiDoc */,
 			);
 		};
 /* End PBXProject section */
@@ -278,7 +278,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C2805B4C1E159885002CE600 /* Build configuration list for PBXNativeTarget "AsciiDoc Spotlight" */ = {
+		C2805B4C1E159885002CE600 /* Build configuration list for PBXNativeTarget "AsciiDoc" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C2805B4D1E159885002CE600 /* Debug */,
