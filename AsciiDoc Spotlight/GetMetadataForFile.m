@@ -8,9 +8,11 @@
 
 #include <CoreFoundation/CoreFoundation.h>
 #import <CoreData/CoreData.h>
-#import "MySpotlightImporter.h"
+#import "AsciiDoc-Swift.h"
 
-Boolean GetMetadataForFile(void *thisInterface, CFMutableDictionaryRef attributes, CFStringRef contentTypeUTI, CFStringRef pathToFile);
+Boolean GetMetadataForFile(void *thisInterface,
+                           CFMutableDictionaryRef attributes,
+                           CFStringRef contentTypeUTI, CFStringRef pathToFile);
 
 //==============================================================================
 //
@@ -22,7 +24,9 @@ Boolean GetMetadataForFile(void *thisInterface, CFMutableDictionaryRef attribute
 //
 //==============================================================================
 
-Boolean GetMetadataForFile(void *thisInterface, CFMutableDictionaryRef attributes, CFStringRef contentTypeUTI, CFStringRef pathToFile)
+Boolean GetMetadataForFile(void *thisInterface,
+                           CFMutableDictionaryRef attributes,
+                           CFStringRef contentTypeUTI, CFStringRef pathToFile)
 {
     // Pull any available metadata from the file at the specified path
     // Return the attribute keys and attribute values in the dict
@@ -32,36 +36,13 @@ Boolean GetMetadataForFile(void *thisInterface, CFMutableDictionaryRef attribute
     // Data external record file for a specific record instances
 
     Boolean ok = FALSE;
+    NSLog(@"AsciiDoc Spotlight Importer: Getting file metadata");
     @autoreleasepool {
-        NSError *error = nil;
-        
-        if ([(__bridge NSString *)contentTypeUTI isEqualToString:@"YOUR_STORE_FILE_UTI"]) {
-            // import from store file metadata
-            
-            // Create the URL, then attempt to get the meta-data from the store
-            NSURL *url = [NSURL fileURLWithPath:(__bridge NSString *)pathToFile];
-            // This uses NSXMLStoreType. If your store is a different type, specify the correct type here.
-            NSDictionary *metadata = [NSPersistentStoreCoordinator metadataForPersistentStoreOfType:YOUR_STORE_TYPE URL:url options:nil error:&error];
-            
-            // If there is no error, add the info
-            if (error == NULL) {
-                // Get the information you are interested in from the dictionary
-                // "YOUR_INFO" should be replaced by key(s) you are interested in
-                
-                NSObject *contentToIndex = metadata[@"YOUR_INFO"];
-                if (contentToIndex != nil) {
-                    // Add the metadata to the text content for indexing
-                    ((__bridge NSMutableDictionary *)attributes)[(NSString *)kMDItemTextContent] = contentToIndex;
-                    ok = TRUE;
-                }
-            }
-            
-        } else if ([(__bridge NSString *)contentTypeUTI isEqualToString:@"YOUR_EXTERNAL_RECORD_UTI"]) {
-            // import from an external record file
-            
-            MySpotlightImporter *importer = [[MySpotlightImporter alloc] init];
-            
-            ok = [importer importFileAtPath:(__bridge NSString *)pathToFile attributes:(__bridge NSMutableDictionary *)attributes error:&error];
+        if ([(__bridge NSString *)contentTypeUTI isEqualToString:@"org.asciidoc"]) {
+            AsciiDocImporter *importer = [[AsciiDocImporter alloc] init];
+            ok = [importer
+                  importFileAtPath:(__bridge NSString *)pathToFile
+                  attributes:(__bridge NSMutableDictionary *)attributes];
         }
     }
     
