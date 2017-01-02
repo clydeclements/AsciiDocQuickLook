@@ -12,53 +12,70 @@ import Foundation
     public func importFile(atPath pathToFile: NSString,
                            attributes: NSMutableDictionary) -> Bool {
         NSLog("AsciiDocImporter import")
-        let task = Process()
-        let pipe = Pipe()
-        let userName = NSUserName()
-        let homeDirectory = NSHomeDirectoryForUser(userName)
-        let templateDirectory = "\(homeDirectory!)/.asciidoctor/Spotlight/templates"
-        task.launchPath = "/usr/local/bin/asciidoctor"
-        task.arguments = ["-b", "html5",
-                          "-a", "nofooter",
-                          "-T", templateDirectory,
-                          "-o", "-", pathToFile as String]
-        task.standardOutput = pipe
-        task.launch()
-        task.waitUntilExit()
-        if (task.terminationStatus == 0) {
-            let handle = pipe.fileHandleForReading
-            let data = handle.readDataToEndOfFile()
-            if let content = String.init(data: data, encoding: .utf8) {
-                NSLog("AsciiDoc file parsed: \(pathToFile)")
-                NSLog("AsciiDoc file attributes: \(content)")
-                if let properties = NSDictionary.init(contentsOfFile: content) {
-                    //let attributes = NSMutableDictionary()
-                    if let title = properties["doctitle"] as? String {
-                        attributes[kMDItemTitle] = title
-                    }
-                    if let author = properties["author"] as? String {
-                        attributes[kMDItemAuthors] = [author]
-                    }
-                    if let created = properties["created"] as? String {
-                        attributes[kMDItemContentCreationDate] = created
-                    }
-                    if let keywords = properties["keywords"] as? String {
-                        let terms = keywords.components(separatedBy: ",")
-                        attributes[kMDItemKeywords] = terms
-                    }
-                    return true
-                } else {
-                    NSLog("Unable to convert content of file \(pathToFile) to a dictionary")
-                    return false
-                }
-            } else {
-                NSLog("Unable to convert content of file \(pathToFile) to a string")
-                return false
+        let fileManager = FileManager()
+        if let data = fileManager.contents(atPath: pathToFile as String),
+            let content = String.init(data: data, encoding: .utf8) {
+            NSLog("AsciiDoc file read: \(pathToFile)")
+            attributes[kMDItemTextContent] = content
+            attributes[kMDItemKind] = "Plain Text Document"
+            let lines = content.components(separatedBy: "\n")
+            NSLog("AsciiDoc file number of lines: \(lines.count)")
+            if lines.count == 0 {
+                return true
             }
+            var properties = [String: String]()
+            let firstLine = lines[0]
+            let titleLineRegex = try? NSRegularExpression(pattern: "^= (.*)$")
+            let range = NSRange(location: 0, length: firstLine.characters.count)
+            let titleLineMatch = titleLineRegex!.matches(
+                in: firstLine, options: [], range: range
+            )
+            if titleLineMatch.count > 0 {
+                let title = titleLineRegex!.stringByReplacingMatches(
+                    in: firstLine, options: [], range: range, withTemplate: "$1"
+                )
+                if title.characters.count > 0 {
+                    properties["doctitle"] = title
+                }
+            }
+            let fieldLineRegex = try? NSRegularExpression(pattern: "^:(\\w+): (.*)")
+            for i in 1..<lines.count {
+                let line = lines[i]
+                let allOfLine = NSRange(location: 0,
+                                        length: line.characters.count)
+                let match = fieldLineRegex!.matches(in: line, options: [],
+                                                    range: allOfLine)
+                if match.count > 0 {
+                    let key = fieldLineRegex!.stringByReplacingMatches(
+                        in: line, options: [], range: allOfLine,
+                        withTemplate: "$1"
+                    )
+                    let value = fieldLineRegex!.stringByReplacingMatches(
+                        in: line, options: [], range: allOfLine,
+                        withTemplate: "$2"
+                    )
+                    properties[key] = value
+                } else {
+                    break
+                }
+            }
+            NSLog("AsciiDoc file attributes: \(properties)")
+            if let title = properties["doctitle"] {
+                attributes[kMDItemTitle] = title
+            }
+            if let author = properties["author"] {
+                attributes[kMDItemAuthors] = [author]
+            }
+            if let created = properties["created"] {
+                attributes[kMDItemContentCreationDate] = created
+            }
+            if let keywords = properties["keywords"] {
+                let terms = keywords.components(separatedBy: ",")
+                attributes[kMDItemKeywords] = terms
+            }
+            return true
         } else {
-            NSLog("Unable to determine attributes of file \(pathToFile)")
-            let status = "Termination status of asciidoctor: " + String(task.terminationStatus)
-            NSLog(status)
+            NSLog("Unable to read content of file \(pathToFile) to a string in UTF-8 encoding")
             return false
         }
     }
