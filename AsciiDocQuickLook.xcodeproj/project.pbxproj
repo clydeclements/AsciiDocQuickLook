@@ -106,6 +106,7 @@
 					C2D158E81D1B1AF2009BC66B = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = LYJQR9E3B7;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -246,6 +247,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocQuickLook/AsciiDocQuickLook-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)QuickLook-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = qlgenerator;
 			};
 			name = Debug;
@@ -263,6 +265,7 @@
 				PRODUCT_NAME = AsciiDoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocQuickLook/AsciiDocQuickLook-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)QuickLook-Swift.h";
+				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = qlgenerator;
 			};
 			name = Release;
