@@ -11,9 +11,25 @@
 		C2D158EF1D1B1AF2009BC66B /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = C2D158EE1D1B1AF2009BC66B /* GeneratePreviewForURL.m */; };
 		C2D158F11D1B1AF2009BC66B /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = C2D158F01D1B1AF2009BC66B /* main.c */; };
 		C2D158FA1D1B1CFC009BC66B /* AsciiDocManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D158F91D1B1CFC009BC66B /* AsciiDocManager.swift */; };
-		C2F174821F8C409300C3C058 /* AsciiDocCompiler.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F174811F8C409300C3C058 /* AsciiDocCompiler.m */; };
-		C2F174841F8C409300C3C058 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F174831F8C409300C3C058 /* main.m */; };
+		C2F174821F8C409300C3C058 /* AsciiDocCompiler.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F174811F8C409300C3C058 /* AsciiDocCompiler.swift */; };
+		C2F174841F8C409300C3C058 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F174831F8C409300C3C058 /* main.swift */; };
+		C2F174891FA54A0500C3C058 /* AsciiDocCompilerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F1747F1F8C409300C3C058 /* AsciiDocCompilerProtocol.swift */; };
+		C2F1748B1FA55CF200C3C058 /* AsciiDocCompiler.xpc in Embed XPC Services */ = {isa = PBXBuildFile; fileRef = C2F1747D1F8C409200C3C058 /* AsciiDocCompiler.xpc */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C2F1748A1FA55C7000C3C058 /* Embed XPC Services */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/XPCServices";
+			dstSubfolderSpec = 16;
+			files = (
+				C2F1748B1FA55CF200C3C058 /* AsciiDocCompiler.xpc in Embed XPC Services */,
+			);
+			name = "Embed XPC Services";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		C2D158E91D1B1AF2009BC66B /* AsciiDoc.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsciiDoc.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -24,11 +40,11 @@
 		C2D158F81D1B1CFC009BC66B /* AsciiDocQuickLook-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsciiDocQuickLook-Bridging-Header.h"; sourceTree = "<group>"; };
 		C2D158F91D1B1CFC009BC66B /* AsciiDocManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsciiDocManager.swift; sourceTree = "<group>"; };
 		C2F1747D1F8C409200C3C058 /* AsciiDocCompiler.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = AsciiDocCompiler.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
-		C2F1747F1F8C409300C3C058 /* AsciiDocCompilerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsciiDocCompilerProtocol.h; sourceTree = "<group>"; };
-		C2F174801F8C409300C3C058 /* AsciiDocCompiler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsciiDocCompiler.h; sourceTree = "<group>"; };
-		C2F174811F8C409300C3C058 /* AsciiDocCompiler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsciiDocCompiler.m; sourceTree = "<group>"; };
-		C2F174831F8C409300C3C058 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C2F1747F1F8C409300C3C058 /* AsciiDocCompilerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsciiDocCompilerProtocol.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		C2F174811F8C409300C3C058 /* AsciiDocCompiler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsciiDocCompiler.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		C2F174831F8C409300C3C058 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		C2F174851F8C409300C3C058 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2F1748C1FA5769C00C3C058 /* AsciiDocCompiler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AsciiDocCompiler.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,10 +99,10 @@
 		C2F1747E1F8C409200C3C058 /* AsciiDocCompiler */ = {
 			isa = PBXGroup;
 			children = (
-				C2F1747F1F8C409300C3C058 /* AsciiDocCompilerProtocol.h */,
-				C2F174801F8C409300C3C058 /* AsciiDocCompiler.h */,
-				C2F174811F8C409300C3C058 /* AsciiDocCompiler.m */,
-				C2F174831F8C409300C3C058 /* main.m */,
+				C2F1748C1FA5769C00C3C058 /* AsciiDocCompiler.entitlements */,
+				C2F1747F1F8C409300C3C058 /* AsciiDocCompilerProtocol.swift */,
+				C2F174811F8C409300C3C058 /* AsciiDocCompiler.swift */,
+				C2F174831F8C409300C3C058 /* main.swift */,
 				C2F174851F8C409300C3C058 /* Info.plist */,
 			);
 			path = AsciiDocCompiler;
@@ -113,6 +129,7 @@
 				C2D158E51D1B1AF2009BC66B /* Frameworks */,
 				C2D158E61D1B1AF2009BC66B /* Headers */,
 				C2D158E71D1B1AF2009BC66B /* Resources */,
+				C2F1748A1FA55C7000C3C058 /* Embed XPC Services */,
 			);
 			buildRules = (
 			);
@@ -153,11 +170,17 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = LYJQR9E3B7;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 					};
 					C2F1747C1F8C409200C3C058 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = LYJQR9E3B7;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -212,8 +235,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2F174841F8C409300C3C058 /* main.m in Sources */,
-				C2F174821F8C409300C3C058 /* AsciiDocCompiler.m in Sources */,
+				C2F174891FA54A0500C3C058 /* AsciiDocCompilerProtocol.swift in Sources */,
+				C2F174841F8C409300C3C058 /* main.swift in Sources */,
+				C2F174821F8C409300C3C058 /* AsciiDocCompiler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -243,6 +267,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = LYJQR9E3B7;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -289,6 +314,7 @@
 				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = LYJQR9E3B7;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -311,10 +337,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = LYJQR9E3B7;
 				INFOPLIST_FILE = AsciiDocQuickLook/Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocQuickLook;
 				PRODUCT_NAME = AsciiDoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocQuickLook/AsciiDocQuickLook-Bridging-Header.h";
@@ -330,10 +358,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = LYJQR9E3B7;
 				INFOPLIST_FILE = AsciiDocQuickLook/Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocQuickLook;
 				PRODUCT_NAME = AsciiDoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocQuickLook/AsciiDocQuickLook-Bridging-Header.h";
@@ -346,26 +376,36 @@
 		C2F174871F8C409300C3C058 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_ENTITLEMENTS = AsciiDocCompiler/AsciiDocCompiler.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = LYJQR9E3B7;
 				INFOPLIST_FILE = AsciiDocCompiler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocCompiler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		C2F174881F8C409300C3C058 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CODE_SIGN_ENTITLEMENTS = AsciiDocCompiler/AsciiDocCompiler.entitlements;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = LYJQR9E3B7;
 				INFOPLIST_FILE = AsciiDocCompiler/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocCompiler;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

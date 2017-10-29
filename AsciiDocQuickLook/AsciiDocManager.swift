@@ -9,59 +9,70 @@
 import Foundation
 import QuickLook
 
+@objc(AsciiDocCompilerProtocol) protocol AsciiDocCompilerProtocol {
+    func compileDocument(docpath: NSString!, withReply: (NSData?)->Void)
+}
+
 @objc open class AsciiDocManager: NSObject {
     fileprivate let url: URL
     fileprivate let configDir: String
+    fileprivate var compiledDocument: NSData? = nil
+    fileprivate let semaphore = DispatchSemaphore(value: 0)
+    fileprivate var remoteProxyError = false
+    
+    // Connection to XPC service that compiles the AsciiDoc document.
+    lazy var asciiDocCompilerConnection: NSXPCConnection = {
+        NSLog("Establishing connection to AsciiDoc compiler service")
+        let connection = NSXPCConnection(serviceName: "ca.bluemist2.AsciiDocCompiler")
+        connection.remoteObjectInterface = NSXPCInterface(with: AsciiDocCompilerProtocol.self)
+        connection.resume()
+        return connection
+    }()
     
     public init(withUrl url: URL) {
+        NSLog("Generating preview for file \(url.path)")
         self.url = url
         //configDir = "\(NSHomeDirectory())/.asciidoctor"
         configDir = "/Users/clyde/.asciidoctor"
-        //self.configDir = "TEST"
-        // TODO: let configPath = "\(NSHomeDirectory())/.asciidoc.qlconf"
     }
     
-    fileprivate func buildData(_ type: String) -> Data? {
-        let task = Process()
-        let pipe = Pipe()
-        
-        let docInfoDirAttribute = "docinfodir=\(configDir)"
-        let loadLibrary = "\(configDir)/devonthink-uri-processor.rb"
-        task.launchPath = "/usr/local/bin/asciidoctor"
-        task.arguments = ["-b", "html5",
-                          "-a", "nofooter",
-                          "-a", "allow-uri-read", "-a", "data-uri",
-                          "-a", docInfoDirAttribute, "-a", "docinfo1",
-                          "-r", loadLibrary,
-                          "-o", "-", url.path]
-/*
-        task.arguments = ["-b", "html5", "-a", "nofooter", "-o", "-", url.path!]
- */
-        task.standardOutput = pipe
-        task.launch()
-        task.waitUntilExit()
-        
-        if (task.terminationStatus == 0) {
-            let handle = pipe.fileHandleForReading
-            let data = handle.readDataToEndOfFile()
-            let status: String = "Termination status: " + String(task.terminationStatus)
-            let htmlContent = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as! String
-            NSLog("File converted to HTML")
-            NSLog(status)
-            NSLog(htmlContent)
-            return data
-        } else {
-            let msg = "Unable to create data for " + type + "; returning nil"
-            NSLog(msg)
-            return nil
+    deinit {
+        NSLog("Shutting down connection to AsciiDoc compiler service")
+        self.asciiDocCompilerConnection.invalidate()
+    }
+    
+    fileprivate func buildData(_ type: String) -> NSData? {
+        NSLog("Retrieving remote object proxy for AsciiDoc compiler service")
+        let compiler = self.asciiDocCompilerConnection.remoteObjectProxyWithErrorHandler {
+            (error) in
+            NSLog("Remote proxy error \(error)")
+            self.remoteProxyError = true
+            self.semaphore.signal()
+        } as! AsciiDocCompilerProtocol
+        let docpath = url.path as NSString
+        NSLog("Requesting compilation of AsciiDoc file \(docpath)")
+        compiler.compileDocument(docpath: docpath) {
+            (data) in
+            NSLog("Compilation of AsciiDoc file finished")
+            self.compiledDocument = data
+            self.semaphore.signal()
         }
+        let timeout = DispatchTime.now() + .seconds(2)
+        if semaphore.wait(timeout: timeout) == .timedOut {
+            NSLog("Unable to compile document due to timeout")
+        }
+        if remoteProxyError {
+            NSLog("Unablet to compile document due to remote proxy error")
+        }
+        //return self.compiledDocument!
+        return nil
     }
     
-    open func buildPreview() -> Data? {
+    open func buildPreview() -> NSData? {
         return buildData("preview")
     }
     
-    open func buildThumbnail() -> Data? {
+    open func buildThumbnail() -> NSData? {
         return buildData("thumbnail")
     }
     
