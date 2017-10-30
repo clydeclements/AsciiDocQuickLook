@@ -1,0 +1,39 @@
+= AsciiDoc Quick Look
+:author: Clyde Clements
+:created: 2017-10-09 14:21:52 -0230
+:revdate: 2017-10-29 22:26:27 -0230
+:uid: D7B93A90-3D70-491D-AEC1-B002E7CAC344
+
+
+== Introduction
+
+This is a Quick Look plug-in for
+http://asciidoctor.org/docs/what-is-asciidoc/[AsciiDoc] format files.
+It renders a preview of an AsciiDoc file selected in Finder by using
+http://asciidoctor.org/[Asciidoctor].
+
+== Installation
+
+* Compile the source in Xcode.
+* Copy `AsciiDoc.qlgenerator` to the system directory `/Library/QuickLook`.
+Note the plug-in will not work if installed to a user directory
+`~/Library/QuickLook` due to restraints imposed by the sand-boxing of Quick
+Look plug-ins.
+* Open Terminal and run the command `qlmanage -r` to reset the Quick Look
+Server.
+
+== Miscellany
+
+* A process should support sudden termination for the best user experience.
+See
+https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/Lifecycle.html#//apple_ref/doc/uid/10000172i-SW3-114794-BAJIBGGI[Terminating Processes].
+The plug-in works by launching an Asciidoctor process; could the handling of
+this process be improved?
+
+* Consider using
+http://asciidoctor.org/docs/install-and-use-asciidoctorjs/[asciidoctor.js]
+to generate previews. Examine https://github.com/lexrus/QLSwift[QLSwift]
+to see how it generates previews using JavaScript. This method would not
+require Asciidoctor program to be installed (though it would require
+distribution of `asciidoctor.js`) and it would not need to launch a separate
+process.
