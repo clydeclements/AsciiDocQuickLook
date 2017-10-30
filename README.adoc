@@ -1,0 +1,40 @@
+= AsciiDoc Quick Look
+:author: Clyde Clements
+:created: 2017-10-09 14:21:52 -0230
+:revdate: 2017-10-29 22:33:25 -0230
+:uid: D7B93A90-3D70-491D-AEC1-B002E7CAC344
+
+
+== Introduction
+
+This is a Quick Look plug-in for
+http://asciidoctor.org/docs/what-is-asciidoc/[AsciiDoc] format files.
+It renders a preview of an AsciiDoc file selected in Finder by using
+http://asciidoctor.org/[Asciidoctor].
+
+== Installation
+
+* Compile the source in Xcode.
+* Copy `AsciiDoc.qlgenerator` to the system directory `/Library/QuickLook`.
+Note the plug-in will not work if installed to a user directory
+`~/Library/QuickLook` due to restraints imposed by the sand-boxing of Quick
+Look plug-ins.
+* Open Terminal and run the command `qlmanage -r` to reset the Quick Look
+Server.
+
+WARNING: This version of the plug-in currently *does not work*.
+Constraints imposed by sand-boxing, I believe, do not allow the XPC service to
+start from within a Quick Look plug-in.
+
+== References
+
+Some sites useful in developing the XPC version of the plug-in:
+
+* https://developer.apple.com/library/content/documentation/MacOSX/Conceptual/BPSystemStartup/Chapters/CreatingXPCServices.html#//apple_ref/doc/uid/10000172i-SW6-SW2
+* https://github.com/objcio/issue-14-xpc/issues/2
+* https://www.raywenderlich.com/148515/grand-central-dispatch-tutorial-swift-3-part-2
+* https://www.swiftbysundell.com/posts/a-deep-dive-into-grand-central-dispatch-in-swift
+* https://github.com/Grayson/InterprocessCommunication
+* https://christiantietze.de/posts/2015/01/xpc-helper-sandboxing-mac/
+* https://github.com/objcio/issue-14-xpc
+* https://www.objc.io/issues/14-mac/xpc/
