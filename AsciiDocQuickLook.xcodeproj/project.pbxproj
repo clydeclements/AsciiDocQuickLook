@@ -246,7 +246,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = AsciiDocQuickLook/Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocQuickLook;
 				PRODUCT_NAME = AsciiDoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocQuickLook/AsciiDocQuickLook-Bridging-Header.h";
@@ -265,7 +265,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = AsciiDocQuickLook/Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocQuickLook;
 				PRODUCT_NAME = AsciiDoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocQuickLook/AsciiDocQuickLook-Bridging-Header.h";
