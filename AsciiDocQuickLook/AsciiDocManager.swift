@@ -11,32 +11,38 @@ import QuickLook
 
 @objc open class AsciiDocManager: NSObject {
     fileprivate let url: URL
-    fileprivate let configDir: String
     
     public init(withUrl url: URL) {
         self.url = url
-        //configDir = "\(NSHomeDirectory())/.asciidoctor"
-        configDir = "/Users/clyde/.asciidoctor"
-        //self.configDir = "TEST"
-        // TODO: let configPath = "\(NSHomeDirectory())/.asciidoc.qlconf"
     }
     
     fileprivate func buildData(_ type: String) -> Data? {
         let task = Process()
+        var useDefaultConverter = true
+        if let prefs = UserDefaults.init(suiteName: "ca.bluemist2.AsciiDocQuickLook") {
+            if let converter = prefs.string(forKey: "AsciiDocConverter") {
+                let msg = "AsciiDoc Quick Look: using user-specified " +
+                    "converter \(converter)"
+                NSLog(msg)
+                task.launchPath = converter
+                useDefaultConverter = false
+            }
+        }
+        if useDefaultConverter {
+            // The PATH setting must include /usr/local/bin in order for the
+            // asciidoctor script to run with /usr/local/bin/ruby (if installed)
+            // instead of /usr/bin/ruby.
+            task.environment = [
+                "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+            ]
+            task.launchPath = "/usr/local/bin/asciidoctor"
+            task.arguments = [
+                "-b", "html5", "-a", "nofooter", "-o", "-", url.path
+            ]
+        } else {
+            task.arguments = [url.path]
+        }
         let pipe = Pipe()
-        
-        let docInfoDirAttribute = "docinfodir=\(configDir)"
-        let loadLibrary = "\(configDir)/devonthink-uri-processor.rb"
-        task.launchPath = "/usr/local/bin/asciidoctor"
-        task.arguments = ["-b", "html5",
-                          "-a", "nofooter",
-                          "-a", "allow-uri-read", "-a", "data-uri",
-                          "-a", docInfoDirAttribute, "-a", "docinfo1",
-                          "-r", loadLibrary,
-                          "-o", "-", url.path]
-/*
-        task.arguments = ["-b", "html5", "-a", "nofooter", "-o", "-", url.path!]
- */
         task.standardOutput = pipe
         task.launch()
         task.waitUntilExit()
@@ -44,14 +50,11 @@ import QuickLook
         if (task.terminationStatus == 0) {
             let handle = pipe.fileHandleForReading
             let data = handle.readDataToEndOfFile()
-            let status: String = "Termination status: " + String(task.terminationStatus)
-            let htmlContent = NSString(data: data, encoding: String.Encoding.utf8.rawValue) as! String
-            NSLog("File converted to HTML")
-            NSLog(status)
-            NSLog(htmlContent)
             return data
         } else {
-            let msg = "Unable to create data for " + type + "; returning nil"
+            let msg = "AsciiDoc Quick Look: " +
+                "converter termination status \(task.terminationStatus); " +
+                "unable to create data for \(type)"
             NSLog(msg)
             return nil
         }

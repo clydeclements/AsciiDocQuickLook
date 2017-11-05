@@ -12,7 +12,6 @@
 			<key>LSItemContentTypes</key>
 			<array>
 				<string>org.asciidoc</string>
-				<string>dyn.ah62d4rv4ge80c65drfy0k55d</string>
 			</array>
 		</dict>
 	</array>
@@ -79,13 +78,12 @@
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>asciidoc</string>
+					<string>ad</string>
 					<string>adoc</string>
+					<string>asciidoc</string>
 				</array>
 			</dict>
 		</dict>
 	</array>
-	<key>com.apple.security.temporary-exception.apple-events</key>
-	<string>com.devon-technologies.thinkpro2</string>
 </dict>
 </plist>
