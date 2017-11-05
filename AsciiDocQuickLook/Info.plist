@@ -85,7 +85,5 @@
 			</dict>
 		</dict>
 	</array>
-	<key>com.apple.security.temporary-exception.apple-events</key>
-	<string>com.devon-technologies.thinkpro2</string>
 </dict>
 </plist>
