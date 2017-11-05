@@ -23,20 +23,15 @@ import QuickLook
     
     fileprivate func buildData(_ type: String) -> Data? {
         let task = Process()
-        let pipe = Pipe()
-        
-        let docInfoDirAttribute = "docinfodir=\(configDir)"
-        let loadLibrary = "\(configDir)/devonthink-uri-processor.rb"
+        // PATH setting must include /usr/local/bin in order for asciidoctor
+        // script to run with /usr/local/bin/ruby (if installed) instead of
+        // /usr/bin/ruby.
+        task.environment = [
+            "PATH": "/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+        ]
         task.launchPath = "/usr/local/bin/asciidoctor"
-        task.arguments = ["-b", "html5",
-                          "-a", "nofooter",
-                          "-a", "allow-uri-read", "-a", "data-uri",
-                          "-a", docInfoDirAttribute, "-a", "docinfo1",
-                          "-r", loadLibrary,
-                          "-o", "-", url.path]
-/*
-        task.arguments = ["-b", "html5", "-a", "nofooter", "-o", "-", url.path!]
- */
+        task.arguments = ["-b", "html5", "-a", "nofooter", "-o", "-", url.path]
+        let pipe = Pipe()
         task.standardOutput = pipe
         task.launch()
         task.waitUntilExit()
@@ -51,7 +46,9 @@ import QuickLook
             NSLog(htmlContent)
             return data
         } else {
-            let msg = "Unable to create data for " + type + "; returning nil"
+            var msg = "Termination status: \(task.terminationStatus)"
+            NSLog(msg)
+            msg = "Unable to create data for \(type); returning nil"
             NSLog(msg)
             return nil
         }
