@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:AsciiDoc Spotlight.xcodeproj">
+      location = "self:/Users/clyde/Documents/Projects/AsciiDocSpotlight/AsciiDocSpotlight.xcodeproj">
    </FileRef>
 </Workspace>

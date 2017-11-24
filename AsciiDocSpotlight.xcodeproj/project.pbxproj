@@ -35,7 +35,7 @@
 		C2805B341E159885002CE600 = {
 			isa = PBXGroup;
 			children = (
-				C2805B3F1E159885002CE600 /* AsciiDoc Spotlight */,
+				C2805B3F1E159885002CE600 /* AsciiDocSpotlight */,
 				C2805B3E1E159885002CE600 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,7 +48,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C2805B3F1E159885002CE600 /* AsciiDoc Spotlight */ = {
+		C2805B3F1E159885002CE600 /* AsciiDocSpotlight */ = {
 			isa = PBXGroup;
 			children = (
 				C2805B431E159885002CE600 /* GetMetadataForFile.m */,
@@ -57,7 +57,7 @@
 				C2805B401E159885002CE600 /* Supporting Files */,
 				C290AB391E1691A7009EF87B /* AsciiDoc-Bridging-Header.h */,
 			);
-			path = "AsciiDoc Spotlight";
+			path = AsciiDocSpotlight;
 			sourceTree = "<group>";
 		};
 		C2805B401E159885002CE600 /* Supporting Files */ = {
@@ -104,7 +104,7 @@
 					};
 				};
 			};
-			buildConfigurationList = C2805B381E159885002CE600 /* Build configuration list for PBXProject "AsciiDoc Spotlight" */;
+			buildConfigurationList = C2805B381E159885002CE600 /* Build configuration list for PBXProject "AsciiDocSpotlight" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -239,14 +239,14 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "AsciiDoc Spotlight/Info.plist";
+				INFOPLIST_FILE = "AsciiDocSpotlight/Info.plist";
 				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
 				LIBRARY_STYLE = BUNDLE;
 				PRODUCT_BUNDLE_IDENTIFIER = "ca.bluemist2.AsciiDoc-Spotlight";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDoc Spotlight/AsciiDoc-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocSpotlight/AsciiDoc-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = mdimporter;
@@ -260,14 +260,14 @@
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "AsciiDoc Spotlight/Info.plist";
+				INFOPLIST_FILE = "AsciiDocSpotlight/Info.plist";
 				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
 				LIBRARY_STYLE = BUNDLE;
 				PRODUCT_BUNDLE_IDENTIFIER = "ca.bluemist2.AsciiDoc-Spotlight";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDoc Spotlight/AsciiDoc-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocSpotlight/AsciiDoc-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 				WRAPPER_EXTENSION = mdimporter;
 			};
@@ -276,7 +276,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C2805B381E159885002CE600 /* Build configuration list for PBXProject "AsciiDoc Spotlight" */ = {
+		C2805B381E159885002CE600 /* Build configuration list for PBXProject "AsciiDocSpotlight" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C2805B4A1E159885002CE600 /* Debug */,
