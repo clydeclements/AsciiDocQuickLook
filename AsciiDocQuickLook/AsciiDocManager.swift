@@ -44,20 +44,26 @@ import QuickLook
         }
         let pipe = Pipe()
         task.standardOutput = pipe
+        var output = Data()
+        let pipeOutputHandle = pipe.fileHandleForReading
+        pipeOutputHandle.readabilityHandler = { pipe in
+            output.append(pipe.availableData)
+        }
+        task.terminationHandler = { task in
+            pipeOutputHandle.readabilityHandler = nil
+        }
         task.launch()
         task.waitUntilExit()
-        
-        if (task.terminationStatus == 0) {
-            let handle = pipe.fileHandleForReading
-            let data = handle.readDataToEndOfFile()
-            return data
-        } else {
+
+        if (task.terminationStatus != 0) {
             let msg = "AsciiDoc Quick Look: " +
                 "converter termination status \(task.terminationStatus); " +
                 "unable to create data for \(type)"
             NSLog(msg)
             return nil
         }
+
+        return output
     }
     
     open func buildPreview() -> Data? {
