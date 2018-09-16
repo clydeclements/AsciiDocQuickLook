@@ -110,6 +110,7 @@
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = LYJQR9E3B7;
 						LastSwiftMigration = 0820;
+						ProvisioningStyle = Automatic;
 					};
 				};
 			};
@@ -247,6 +248,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = AsciiDocQuickLook/Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
@@ -266,6 +268,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = AsciiDocQuickLook/Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
