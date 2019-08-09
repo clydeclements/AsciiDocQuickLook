@@ -52,6 +52,8 @@
 	<key>UTImportedTypeDeclarations</key>
 	<array>
 		<dict>
+			<key>UTTypeDescription</key>
+			<string>AsciiDoc document</string>
 			<key>UTTypeConformsTo</key>
 			<array>
 				<string>public.plain-text</string>
@@ -62,8 +64,9 @@
 			<dict>
 				<key>public.filename-extension</key>
 				<array>
-					<string>asciidoc</string>
+					<string>ad</string>
 					<string>adoc</string>
+					<string>asciidoc</string>
 				</array>
 			</dict>
 		</dict>
