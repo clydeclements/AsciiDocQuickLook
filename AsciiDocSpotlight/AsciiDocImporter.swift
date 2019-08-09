@@ -69,9 +69,26 @@ import Foundation
             if let created = properties["created"] {
                 attributes[kMDItemContentCreationDate] = created
             }
-            if let keywords = properties["keywords"] {
-                let terms = keywords.components(separatedBy: ",")
-                attributes[kMDItemKeywords] = terms
+            if let revdate = properties["revdate"] {
+                attributes[kMDItemContentModificationDate] = revdate
+            }
+            var keywords: [String] = []
+            if let keyword_prop = properties["keywords"] {
+                let terms = keyword_prop.components(separatedBy: ",")
+                for term in terms {
+                    let keyword = term.trimmingCharacters(in: .whitespaces)
+                    keywords.append(keyword)
+                }
+            }
+            if let category_prop = properties["categories"] {
+                let terms = category_prop.components(separatedBy: ",")
+                for term in terms {
+                    let category = "_" + term.trimmingCharacters(in: .whitespaces)
+                    keywords.append(category)
+                }
+            }
+            if keywords.count > 0 {
+                attributes[kMDItemKeywords] = keywords
             }
             return true
         } else {
