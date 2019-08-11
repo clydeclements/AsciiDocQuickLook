@@ -9,7 +9,7 @@
 import Foundation
 
 @objc public class AsciiDocImporter: NSObject {
-    public func importFile(atPath pathToFile: NSString,
+    @objc public func importFile(atPath pathToFile: NSString,
                            attributes: NSMutableDictionary) -> Bool {
         NSLog("AsciiDocImporter import")
         let fileManager = FileManager()
@@ -26,7 +26,7 @@ import Foundation
             var properties = [String: String]()
             let firstLine = lines[0]
             let titleLineRegex = try? NSRegularExpression(pattern: "^= (.*)$")
-            let range = NSRange(location: 0, length: firstLine.characters.count)
+            let range = NSRange(location: 0, length: firstLine.count)
             let titleLineMatch = titleLineRegex!.matches(
                 in: firstLine, options: [], range: range
             )
@@ -34,7 +34,7 @@ import Foundation
                 let title = titleLineRegex!.stringByReplacingMatches(
                     in: firstLine, options: [], range: range, withTemplate: "$1"
                 )
-                if title.characters.count > 0 {
+                if title.count > 0 {
                     properties["doctitle"] = title
                 }
             }
@@ -42,7 +42,7 @@ import Foundation
             for i in 1..<lines.count {
                 let line = lines[i]
                 let allOfLine = NSRange(location: 0,
-                                        length: line.characters.count)
+                                        length: line.count)
                 let match = fieldLineRegex!.matches(in: line, options: [],
                                                     range: allOfLine)
                 if match.count > 0 {
