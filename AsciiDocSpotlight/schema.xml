@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<schema version="1.0" xmlns="http://www.apple.com/metadata"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.apple.com/metadata
+    file:///System/Library/Frameworks/CoreServices.framework/Frameworks/Metadata.framework/Resources/MetadataSchema.xsd">
+    <attributes>
+    </attributes>
+    <types>
+        <type name="org.asciidoc">
+            <allattrs>
+                kMDItemAuthors
+                kMDItemContentCreationDate
+                kMDItemContentModificationDate
+                kMDItemKeywords
+                kMDItemKind
+                kMDItemTextContent
+                kMDItemTitle
+            </allattrs>
+            <displayattrs>
+                kMDItemAuthors
+                kMDItemContentCreationDate
+                kMDItemContentModificationDate
+                kMDItemKeywords
+                kMDItemKind
+                kMDItemTextContent
+                kMDItemTitle
+            </displayattrs>
+        </type>
+    </types>
+</schema>
