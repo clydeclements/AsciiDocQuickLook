@@ -265,7 +265,7 @@
 				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
 				LIBRARY_STYLE = BUNDLE;
-				PRODUCT_BUNDLE_IDENTIFIER = "ca.bluemist2.AsciiDoc-Spotlight";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocSpotlight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocSpotlight/AsciiDoc-Bridging-Header.h";
@@ -286,7 +286,7 @@
 				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
 				LIBRARY_STYLE = BUNDLE;
-				PRODUCT_BUNDLE_IDENTIFIER = "ca.bluemist2.AsciiDoc-Spotlight";
+				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocSpotlight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocSpotlight/AsciiDoc-Bridging-Header.h";
