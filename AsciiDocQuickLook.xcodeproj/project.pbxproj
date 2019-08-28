@@ -277,7 +277,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocQuickLook/AsciiDocQuickLook-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)QuickLook-Swift.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = qlgenerator;
 			};
 			name = Debug;
@@ -296,7 +296,7 @@
 				PRODUCT_NAME = AsciiDoc;
 				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocQuickLook/AsciiDocQuickLook-Bridging-Header.h";
 				SWIFT_OBJC_INTERFACE_HEADER_NAME = "$(SWIFT_MODULE_NAME)QuickLook-Swift.h";
-				SWIFT_VERSION = 3.0;
+				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = qlgenerator;
 			};
 			name = Release;
