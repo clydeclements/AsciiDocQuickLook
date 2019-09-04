@@ -15,6 +15,7 @@ public struct AsciiDocMetadata: Codable {
     var contentModificationDate: Date?
     var keywords: String?
     var textContent: String?
+    var path: String?
     let kind: String
     
     init() {
@@ -64,7 +65,13 @@ public func getAsciiDocMetadata(fromData data: Data) -> AsciiDocMetadata
     if lines.count == 0 {
         return metadata
     }
-    
+
+    let bundle = Bundle(identifier: "ca.bluemist2.AsciiDocSpotlightTests")
+    if let path = bundle?.resourcePath {
+        metadata.path = path
+    }
+    //let bundle = Bundle(for: NSClassFromString("AsciiDocMetadata")!)
+    //metadata.path = bundle.bundlePath
     let firstLine = lines[0]
     let titleLineRegex = try? NSRegularExpression(pattern: "^= (.*)$")
     let range = NSRange(location: 0, length: firstLine.count)
