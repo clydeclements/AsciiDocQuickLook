@@ -8,7 +8,7 @@
 
 #include <CoreFoundation/CoreFoundation.h>
 #import <CoreData/CoreData.h>
-#import "AsciiDoc-Swift.h"
+#import "AsciiDoc.h"
 
 Boolean GetMetadataForFile(void *thisInterface,
                            CFMutableDictionaryRef attributes,
@@ -35,17 +35,13 @@ Boolean GetMetadataForFile(void *thisInterface,
     // case we import the store's metadata, or it could point to a Core
     // Data external record file for a specific record instances
 
-    Boolean ok = FALSE;
-    NSLog(@"AsciiDoc Spotlight Importer: Getting file metadata");
     @autoreleasepool {
         if ([(__bridge NSString *)contentTypeUTI isEqualToString:@"org.asciidoc"]) {
-            AsciiDocImporter *importer = [[AsciiDocImporter alloc] init];
-            ok = [importer
-                  importFileAtPath:(__bridge NSString *)pathToFile
-                  attributes:(__bridge NSMutableDictionary *)attributes];
+            AsciiDoc *adoc = [[AsciiDoc alloc] initWithPath:pathToFile];
+            [adoc getMetadata:(__bridge NSMutableDictionary *)attributes];
         }
     }
-    
+
     // Return the status
-    return ok;
+    return true;
 }
