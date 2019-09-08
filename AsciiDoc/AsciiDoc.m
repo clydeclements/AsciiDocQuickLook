@@ -22,10 +22,7 @@ VALUE getMetadataViaRuby(VALUE docPath);
     self = [super init];
     if (self) {
         self.filename = (__bridge NSString *)path;
-#if DEBUG
-        NSString *resourcePath = NSStringize(RESOURCE_PATH);
-        NSString *gemPath = NSStringize(GEM_PATH);
-#else
+#ifdef PRODUCT_BUNDLE_IDENTIFIER
         NSString *identifier = NSStringize(PRODUCT_BUNDLE_IDENTIFIER);
         NSBundle *bundle = [NSBundle bundleWithIdentifier:identifier];
         if (!bundle) {
@@ -35,8 +32,11 @@ VALUE getMetadataViaRuby(VALUE docPath);
         if (!resourcePath) {
             return nil;
         }
-        NSMutableString *gemPath = [[resourcePath stringByAppendingPathComponent:@"gems"] mutableCopy];
+        NSMutableString *gemPath = [[resourcePath stringByAppendingPathComponent:@"ruby"] mutableCopy];
         [gemPath appendString:@":"];
+#else
+        NSString *resourcePath = NSStringize(RESOURCE_PATH);
+        NSString *gemPath = NSStringize(GEM_PATH);
 #endif
         self.gemPath = [NSString stringWithString:gemPath];
         self.metadataScript = [resourcePath stringByAppendingPathComponent:@"get_metadata.rb"];
