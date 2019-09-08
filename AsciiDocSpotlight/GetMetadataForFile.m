@@ -36,6 +36,7 @@ Boolean GetMetadataForFile(void *thisInterface,
     // Data external record file for a specific record instances
 
     @autoreleasepool {
+        NSLog(@"AsciiDoc Spotlight Plug-in: Attempting to import file %@", (__bridge NSString *)pathToFile);
         if ([(__bridge NSString *)contentTypeUTI isEqualToString:@"org.asciidoc"]) {
             AsciiDoc *adoc = [[AsciiDoc alloc] initWithPath:pathToFile];
             [adoc getMetadata:(__bridge NSMutableDictionary *)attributes];
