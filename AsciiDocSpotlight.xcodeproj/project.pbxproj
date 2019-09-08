@@ -17,6 +17,10 @@
 		C2907F4E231C427A001891F1 /* AsciiDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = C2907F3B231AF080001891F1 /* AsciiDoc.m */; };
 		C2907F51231C7D01001891F1 /* Ruby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2907F50231C7D01001891F1 /* Ruby.framework */; };
 		C2907F5223208B71001891F1 /* Ruby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2907F50231C7D01001891F1 /* Ruby.framework */; };
+		C2907F572321D73C001891F1 /* install_gems.sh in Resources */ = {isa = PBXBuildFile; fileRef = C2907F562321D73C001891F1 /* install_gems.sh */; };
+		C2907FAF2322FDB3001891F1 /* get_metadata.rb in Resources */ = {isa = PBXBuildFile; fileRef = C2907FAE2322FDB3001891F1 /* get_metadata.rb */; };
+		C2907FB923246334001891F1 /* AsciiDocHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C2907FB823246334001891F1 /* AsciiDocHelper.m */; };
+		C2907FBB23246334001891F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2907FBA23246334001891F1 /* main.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,7 +49,14 @@
 		C2907F43231C3D64001891F1 /* AsciiDocRunner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AsciiDocRunner; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2907F45231C3D64001891F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2907F50231C7D01001891F1 /* Ruby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ruby.framework; path = System/Library/Frameworks/Ruby.framework; sourceTree = SDKROOT; };
-		C2907F532321D4E9001891F1 /* Resources */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Resources; sourceTree = "<group>"; };
+		C2907F562321D73C001891F1 /* install_gems.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = install_gems.sh; sourceTree = "<group>"; };
+		C2907FAE2322FDB3001891F1 /* get_metadata.rb */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.ruby; path = get_metadata.rb; sourceTree = "<group>"; };
+		C2907FB423246334001891F1 /* AsciiDocHelper.xpc */ = {isa = PBXFileReference; explicitFileType = "wrapper.xpc-service"; includeInIndex = 0; path = AsciiDocHelper.xpc; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2907FB623246334001891F1 /* AsciiDocHelperProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsciiDocHelperProtocol.h; sourceTree = "<group>"; };
+		C2907FB723246334001891F1 /* AsciiDocHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsciiDocHelper.h; sourceTree = "<group>"; };
+		C2907FB823246334001891F1 /* AsciiDocHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsciiDocHelper.m; sourceTree = "<group>"; };
+		C2907FBA23246334001891F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C2907FBC23246334001891F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C290AB391E1691A7009EF87B /* AsciiDoc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsciiDoc-Bridging-Header.h"; sourceTree = "<group>"; };
 		C290AB3A1E1691A7009EF87B /* AsciiDocImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsciiDocImporter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,16 +85,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C2907FB123246334001891F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		C2805B341E159885002CE600 = {
 			isa = PBXGroup;
 			children = (
+				C2907FAD2322FDB3001891F1 /* Resources */,
+				C2907F552321D6ED001891F1 /* Scripts */,
 				C2907F3A231AE6DD001891F1 /* AsciiDoc */,
 				C2805B3F1E159885002CE600 /* AsciiDocSpotlight */,
-				C2907F532321D4E9001891F1 /* Resources */,
 				C2907EE4230E01AB001891F1 /* AsciiDocSpotlightTests */,
+				C2907FB523246334001891F1 /* AsciiDocHelper */,
 				C2805B3E1E159885002CE600 /* Products */,
 				C2907F4F231C7D01001891F1 /* Frameworks */,
 			);
@@ -95,6 +115,7 @@
 				C2805B3D1E159885002CE600 /* AsciiDoc.mdimporter */,
 				C2907EE3230E01AB001891F1 /* AsciiDocSpotlightTests.xctest */,
 				C2907F43231C3D64001891F1 /* AsciiDocRunner */,
+				C2907FB423246334001891F1 /* AsciiDocHelper.xpc */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +160,34 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C2907F552321D6ED001891F1 /* Scripts */ = {
+			isa = PBXGroup;
+			children = (
+				C2907F562321D73C001891F1 /* install_gems.sh */,
+			);
+			path = Scripts;
+			sourceTree = "<group>";
+		};
+		C2907FAD2322FDB3001891F1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C2907FAE2322FDB3001891F1 /* get_metadata.rb */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C2907FB523246334001891F1 /* AsciiDocHelper */ = {
+			isa = PBXGroup;
+			children = (
+				C2907FB623246334001891F1 /* AsciiDocHelperProtocol.h */,
+				C2907FB723246334001891F1 /* AsciiDocHelper.h */,
+				C2907FB823246334001891F1 /* AsciiDocHelper.m */,
+				C2907FBA23246334001891F1 /* main.m */,
+				C2907FBC23246334001891F1 /* Info.plist */,
+			);
+			path = AsciiDocHelper;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -149,6 +198,7 @@
 				C2805B391E159885002CE600 /* Sources */,
 				C2805B3A1E159885002CE600 /* Frameworks */,
 				C2805B3B1E159885002CE600 /* Resources */,
+				C2907F592321D870001891F1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -193,6 +243,23 @@
 			productReference = C2907F43231C3D64001891F1 /* AsciiDocRunner */;
 			productType = "com.apple.product-type.tool";
 		};
+		C2907FB323246334001891F1 /* AsciiDocHelper */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2907FBD23246334001891F1 /* Build configuration list for PBXNativeTarget "AsciiDocHelper" */;
+			buildPhases = (
+				C2907FB023246334001891F1 /* Sources */,
+				C2907FB123246334001891F1 /* Frameworks */,
+				C2907FB223246334001891F1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AsciiDocHelper;
+			productName = AsciiDocHelper;
+			productReference = C2907FB423246334001891F1 /* AsciiDocHelper.xpc */;
+			productType = "com.apple.product-type.xpc-service";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -205,6 +272,7 @@
 				TargetAttributes = {
 					C2805B3C1E159885002CE600 = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = LYJQR9E3B7;
 						LastSwiftMigration = 1030;
 						ProvisioningStyle = Automatic;
 					};
@@ -214,6 +282,11 @@
 						ProvisioningStyle = Automatic;
 					};
 					C2907F42231C3D64001891F1 = {
+						CreatedOnToolsVersion = 10.3;
+						DevelopmentTeam = LYJQR9E3B7;
+						ProvisioningStyle = Automatic;
+					};
+					C2907FB323246334001891F1 = {
 						CreatedOnToolsVersion = 10.3;
 						DevelopmentTeam = LYJQR9E3B7;
 						ProvisioningStyle = Automatic;
@@ -236,6 +309,7 @@
 				C2805B3C1E159885002CE600 /* AsciiDoc */,
 				C2907EE2230E01AB001891F1 /* AsciiDocSpotlightTests */,
 				C2907F42231C3D64001891F1 /* AsciiDocRunner */,
+				C2907FB323246334001891F1 /* AsciiDocHelper */,
 			);
 		};
 /* End PBXProject section */
@@ -245,7 +319,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2907F572321D73C001891F1 /* install_gems.sh in Resources */,
 				C2907EA8230040E6001891F1 /* schema.xml in Resources */,
+				C2907FAF2322FDB3001891F1 /* get_metadata.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,7 +332,34 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C2907FB223246334001891F1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C2907F592321D870001891F1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/Scripts/install_gems.sh\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C2805B391E159885002CE600 /* Sources */ = {
@@ -284,6 +387,15 @@
 			files = (
 				C2907F4E231C427A001891F1 /* AsciiDoc.m in Sources */,
 				C2907F4D231C402E001891F1 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2907FB023246334001891F1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2907FBB23246334001891F1 /* main.m in Sources */,
+				C2907FB923246334001891F1 /* AsciiDocHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,11 +512,13 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = LYJQR9E3B7;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					"GEM_PATH=\"/usr/local/Cellar/asciidoctor/1.5.8/libexec:\"",
-					"RESOURCE_PATH=\"$(SRCROOT)/Resources\"",
+					"PRODUCT_BUNDLE_IDENTIFIER=\"$(PRODUCT_BUNDLE_IDENTIFIER)\"",
 				);
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/AsciiDoc";
 				INFOPLIST_FILE = AsciiDocSpotlight/Info.plist;
@@ -414,6 +528,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocSpotlight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocSpotlight/AsciiDoc-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -428,7 +543,11 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = LYJQR9E3B7;
+				GCC_PREPROCESSOR_DEFINITIONS = "PRODUCT_BUNDLE_IDENTIFIER=\"$(PRODUCT_BUNDLE_IDENTIFIER)\"";
 				HEADER_SEARCH_PATHS = "$(SRCROOT)/AsciiDoc";
 				INFOPLIST_FILE = AsciiDocSpotlight/Info.plist;
 				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
@@ -437,6 +556,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocSpotlight;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocSpotlight/AsciiDoc-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -533,6 +653,49 @@
 			};
 			name = Release;
 		};
+		C2907FBE23246334001891F1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = LYJQR9E3B7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AsciiDocHelper/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		C2907FBF23246334001891F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = LYJQR9E3B7;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AsciiDocHelper/Info.plist;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocHelper;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -568,6 +731,15 @@
 			buildConfigurations = (
 				C2907F48231C3D64001891F1 /* Debug */,
 				C2907F49231C3D64001891F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2907FBD23246334001891F1 /* Build configuration list for PBXNativeTarget "AsciiDocHelper" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2907FBE23246334001891F1 /* Debug */,
+				C2907FBF23246334001891F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
