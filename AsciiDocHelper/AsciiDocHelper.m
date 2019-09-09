@@ -13,6 +13,7 @@
 // This implements the example protocol. Replace the body of this class with the implementation of this service's protocol.
 - (void)upperCaseString:(NSString *)aString withReply:(void (^)(NSString *))reply {
     //NSString *response = [aString uppercaseString];
+    NSLog(@"upperCaseString method called");
     NSString *response = @"AsciiDoc Quick Look";
     reply(response);
 }
