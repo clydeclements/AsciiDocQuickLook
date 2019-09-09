@@ -12,11 +12,9 @@
 		C2907EA8230040E6001891F1 /* schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = C2907EA7230040E6001891F1 /* schema.xml */; };
 		C2907EE6230E01AB001891F1 /* AsciiDocSpotlightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2907EE5230E01AB001891F1 /* AsciiDocSpotlightTests.swift */; };
 		C2907EF1230F4D50001891F1 /* AsciiDocImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290AB3A1E1691A7009EF87B /* AsciiDocImporter.swift */; };
-		C2907F3C231AF080001891F1 /* AsciiDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = C2907F3B231AF080001891F1 /* AsciiDoc.m */; };
 		C2907F4D231C402E001891F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2907F45231C3D64001891F1 /* main.m */; };
 		C2907F4E231C427A001891F1 /* AsciiDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = C2907F3B231AF080001891F1 /* AsciiDoc.m */; };
 		C2907F51231C7D01001891F1 /* Ruby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2907F50231C7D01001891F1 /* Ruby.framework */; };
-		C2907F5223208B71001891F1 /* Ruby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2907F50231C7D01001891F1 /* Ruby.framework */; };
 		C2907F572321D73C001891F1 /* install_gems.sh in Resources */ = {isa = PBXBuildFile; fileRef = C2907F562321D73C001891F1 /* install_gems.sh */; };
 		C2907FAF2322FDB3001891F1 /* get_metadata.rb in Resources */ = {isa = PBXBuildFile; fileRef = C2907FAE2322FDB3001891F1 /* get_metadata.rb */; };
 		C2907FB923246334001891F1 /* AsciiDocHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C2907FB823246334001891F1 /* AsciiDocHelper.m */; };
@@ -36,7 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		C2805B3D1E159885002CE600 /* AsciiDoc.mdimporter */ = {isa = PBXFileReference; explicitFileType = "wrapper.spotlight-importer"; includeInIndex = 0; path = AsciiDoc.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2805B3D1E159885002CE600 /* AsciiDocImporter.mdimporter */ = {isa = PBXFileReference; explicitFileType = "wrapper.spotlight-importer"; includeInIndex = 0; path = AsciiDocImporter.mdimporter; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2805B411E159885002CE600 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		C2805B431E159885002CE600 /* GetMetadataForFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMetadataForFile.m; sourceTree = "<group>"; };
 		C2805B491E159885002CE600 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -58,6 +56,7 @@
 		C2907FBA23246334001891F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2907FBC23246334001891F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C2907FD023267B89001891F1 /* launchd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = launchd.plist; sourceTree = "<group>"; };
+		C2907FF92326E177001891F1 /* AsciiDocImporter.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = AsciiDocImporter.entitlements; path = AsciiDocSpotlight/AsciiDocImporter.entitlements; sourceTree = "<group>"; };
 		C290AB391E1691A7009EF87B /* AsciiDoc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsciiDoc-Bridging-Header.h"; sourceTree = "<group>"; };
 		C290AB3A1E1691A7009EF87B /* AsciiDocImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsciiDocImporter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,7 +66,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2907F5223208B71001891F1 /* Ruby.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +97,7 @@
 		C2805B341E159885002CE600 = {
 			isa = PBXGroup;
 			children = (
+				C2907FF92326E177001891F1 /* AsciiDocImporter.entitlements */,
 				C2907FAD2322FDB3001891F1 /* Resources */,
 				C2907F552321D6ED001891F1 /* Scripts */,
 				C2907F3A231AE6DD001891F1 /* AsciiDoc */,
@@ -113,7 +112,7 @@
 		C2805B3E1E159885002CE600 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C2805B3D1E159885002CE600 /* AsciiDoc.mdimporter */,
+				C2805B3D1E159885002CE600 /* AsciiDocImporter.mdimporter */,
 				C2907EE3230E01AB001891F1 /* AsciiDocSpotlightTests.xctest */,
 				C2907F43231C3D64001891F1 /* AsciiDocRunner */,
 				C2907FB423246334001891F1 /* AsciiDocHelper.xpc */,
@@ -193,9 +192,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C2805B3C1E159885002CE600 /* AsciiDoc */ = {
+		C2805B3C1E159885002CE600 /* AsciiDocImporter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C2805B4C1E159885002CE600 /* Build configuration list for PBXNativeTarget "AsciiDoc" */;
+			buildConfigurationList = C2805B4C1E159885002CE600 /* Build configuration list for PBXNativeTarget "AsciiDocImporter" */;
 			buildPhases = (
 				C2805B391E159885002CE600 /* Sources */,
 				C2805B3A1E159885002CE600 /* Frameworks */,
@@ -206,9 +205,9 @@
 			);
 			dependencies = (
 			);
-			name = AsciiDoc;
+			name = AsciiDocImporter;
 			productName = "AsciiDoc Spotlight";
-			productReference = C2805B3D1E159885002CE600 /* AsciiDoc.mdimporter */;
+			productReference = C2805B3D1E159885002CE600 /* AsciiDocImporter.mdimporter */;
 			productType = "com.apple.product-type.spotlight-importer";
 		};
 		C2907EE2230E01AB001891F1 /* AsciiDocSpotlightTests */ = {
@@ -308,7 +307,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C2805B3C1E159885002CE600 /* AsciiDoc */,
+				C2805B3C1E159885002CE600 /* AsciiDocImporter */,
 				C2907EE2230E01AB001891F1 /* AsciiDocSpotlightTests */,
 				C2907F42231C3D64001891F1 /* AsciiDocRunner */,
 				C2907FB323246334001891F1 /* AsciiDocHelper */,
@@ -368,7 +367,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2907F3C231AF080001891F1 /* AsciiDoc.m in Sources */,
 				C2805B421E159885002CE600 /* main.c in Sources */,
 				C2805B441E159885002CE600 /* GetMetadataForFile.m in Sources */,
 			);
@@ -452,7 +450,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -501,7 +499,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -514,6 +512,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AsciiDocSpotlight/AsciiDocImporter.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -545,6 +544,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = AsciiDocSpotlight/AsciiDocImporter.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -710,7 +710,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C2805B4C1E159885002CE600 /* Build configuration list for PBXNativeTarget "AsciiDoc" */ = {
+		C2805B4C1E159885002CE600 /* Build configuration list for PBXNativeTarget "AsciiDocImporter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C2805B4D1E159885002CE600 /* Debug */,
