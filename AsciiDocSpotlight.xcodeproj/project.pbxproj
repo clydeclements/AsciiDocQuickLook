@@ -57,6 +57,7 @@
 		C2907FB823246334001891F1 /* AsciiDocHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsciiDocHelper.m; sourceTree = "<group>"; };
 		C2907FBA23246334001891F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2907FBC23246334001891F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2907FD023267B89001891F1 /* launchd.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = launchd.plist; sourceTree = "<group>"; };
 		C290AB391E1691A7009EF87B /* AsciiDoc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsciiDoc-Bridging-Header.h"; sourceTree = "<group>"; };
 		C290AB3A1E1691A7009EF87B /* AsciiDocImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsciiDocImporter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -184,6 +185,7 @@
 				C2907FB823246334001891F1 /* AsciiDocHelper.m */,
 				C2907FBA23246334001891F1 /* main.m */,
 				C2907FBC23246334001891F1 /* Info.plist */,
+				C2907FD023267B89001891F1 /* launchd.plist */,
 			);
 			path = AsciiDocHelper;
 			sourceTree = "<group>";
