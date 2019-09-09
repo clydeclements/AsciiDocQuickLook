@@ -157,7 +157,6 @@ VALUE getMetadataViaRuby(VALUE docPath);
     if ((obj = metadata[@"uid"]) != nil) {
         [attributes setObject:obj forKey:(NSString *)kMDItemIdentifier];
     }
-    printf("%s\n", output);
 }
 
 @end
