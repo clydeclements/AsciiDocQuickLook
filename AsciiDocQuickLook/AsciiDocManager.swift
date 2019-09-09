@@ -12,7 +12,7 @@ import QuickLook
 @objc open class AsciiDocManager: NSObject {
     fileprivate let url: URL
     
-    public init(withUrl url: URL) {
+    @objc public init(withUrl url: URL) {
         self.url = url
     }
     
@@ -66,15 +66,15 @@ import QuickLook
         return output
     }
     
-    open func buildPreview() -> Data? {
+    @objc open func buildPreview() -> Data? {
         return buildData("preview")
     }
     
-    open func buildThumbnail() -> Data? {
+    @objc open func buildThumbnail() -> Data? {
         return buildData("thumbnail")
     }
     
-    open func buildPreviewProperties() -> CFDictionary {
+    @objc open func buildPreviewProperties() -> CFDictionary {
         return [
             kQLPreviewPropertyTextEncodingNameKey as String : "UTF-8",
             kQLPreviewPropertyMIMETypeKey as String : "text/html"
