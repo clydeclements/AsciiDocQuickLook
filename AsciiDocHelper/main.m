@@ -6,7 +6,14 @@
 //  Copyright © 2019 Clyde Clements. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+#import <Ruby/Ruby.h>
 #import "AsciiDocHelper.h"
+
+#define NSStringize_helper(x) #x
+#define NSStringize(x) @NSStringize_helper(x)
+
+void cleanup(void);
 
 @interface ServiceDelegate : NSObject <NSXPCListenerDelegate>
 @end
@@ -22,7 +29,7 @@
     newConnection.exportedInterface = [NSXPCInterface interfaceWithProtocol:@protocol(AsciiDocHelperProtocol)];
     
     // Next, set the object that the connection exports. All messages sent on the connection to this service will be sent to the exported object to handle. The connection retains the exported object.
-    AsciiDocHelper *exportedObject = [AsciiDocHelper new];
+    AsciiDocHelper *exportedObject = [[AsciiDocHelper alloc] init];
     newConnection.exportedObject = exportedObject;
     
     // Resuming the connection allows the system to deliver more incoming messages.
@@ -41,12 +48,18 @@ int main(int argc, const char *argv[])
     ServiceDelegate *delegate = [ServiceDelegate new];
     
     // Set up the one NSXPCListener for this service. It will handle all incoming connections.
-    NSXPCListener *listener = [[NSXPCListener alloc] initWithMachServiceName:@"ca.bluemist2.AsciiDocHelper"];
+    NSString *name = NSStringize(PRODUCT_BUNDLE_IDENTIFIER);
+    NSXPCListener *listener = [[NSXPCListener alloc] initWithMachServiceName:name];
     listener.delegate = delegate;
-    
-    // Resuming the serviceListener starts this service. This method does not return.
+    atexit(cleanup);
+
+    NSLog(@"Starting AsciiDocHelper service");
     [listener resume];
-    NSLog(@"Started AsciiDocHelper service");
     [[NSRunLoop currentRunLoop] run];
     return 0;
+}
+
+void cleanup()
+{
+    ruby_cleanup(0);
 }

@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AsciiDoc.h"
 #import "AsciiDocHelperProtocol.h"
 
 #define NSStringize_helper(x) #x
@@ -16,11 +15,8 @@
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
         NSString *srcRoot = NSStringize(SRCROOT);
-        NSString* path = [srcRoot stringByAppendingPathComponent:@"Tests/modèle.adoc"];
-        AsciiDoc* adoc = [[AsciiDoc alloc] initWithPath:(__bridge CFStringRef)(path)];
-        NSMutableDictionary* attributes = [[NSMutableDictionary alloc] init];
-        [adoc getMetadata:attributes];
-        NSLog(@"Attributes: %@", attributes);
+        //NSString* path = [srcRoot stringByAppendingPathComponent:@"Tests/modèle.adoc"];
+        NSString* path = [srcRoot stringByAppendingPathComponent:@"README.adoc"];
 
         NSXPCConnection *helperConnection = [[NSXPCConnection alloc]
                                              initWithMachServiceName:@"ca.bluemist2.AsciiDocHelper"
@@ -36,9 +32,11 @@ int main(int argc, const char * argv[]) {
         id remoteObject = [helperConnection remoteObjectProxyWithErrorHandler:^(NSError *error) {
             NSLog(@"Error in AsciiDocHelper connection: %@", [error debugDescription]);
         }];
-        [remoteObject upperCaseString:@"hello" withReply:^(NSString *result) {
+        [remoteObject getMetadata:path withReply:^(NSData *data) {
             // We have received a response. Update our text field, but do it on the main thread.
-            NSLog(@"Result string was: %@", result);
+            NSLog(@"Reply received");
+            NSDictionary *attributes = (NSDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:data];
+            NSLog(@"Attributes: %@", attributes);
         }];
         
         NSLog(@"Waiting for response from AsciiDocHelper");
