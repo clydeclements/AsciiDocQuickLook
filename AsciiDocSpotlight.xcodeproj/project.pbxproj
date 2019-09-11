@@ -13,12 +13,12 @@
 		C2907EE6230E01AB001891F1 /* AsciiDocSpotlightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2907EE5230E01AB001891F1 /* AsciiDocSpotlightTests.swift */; };
 		C2907EF1230F4D50001891F1 /* AsciiDocImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290AB3A1E1691A7009EF87B /* AsciiDocImporter.swift */; };
 		C2907F4D231C402E001891F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2907F45231C3D64001891F1 /* main.m */; };
-		C2907F4E231C427A001891F1 /* AsciiDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = C2907F3B231AF080001891F1 /* AsciiDoc.m */; };
-		C2907F51231C7D01001891F1 /* Ruby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2907F50231C7D01001891F1 /* Ruby.framework */; };
 		C2907F572321D73C001891F1 /* install_gems.sh in Resources */ = {isa = PBXBuildFile; fileRef = C2907F562321D73C001891F1 /* install_gems.sh */; };
-		C2907FAF2322FDB3001891F1 /* get_metadata.rb in Resources */ = {isa = PBXBuildFile; fileRef = C2907FAE2322FDB3001891F1 /* get_metadata.rb */; };
 		C2907FB923246334001891F1 /* AsciiDocHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C2907FB823246334001891F1 /* AsciiDocHelper.m */; };
 		C2907FBB23246334001891F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2907FBA23246334001891F1 /* main.m */; };
+		C2907FFA2327280D001891F1 /* Ruby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2907F50231C7D01001891F1 /* Ruby.framework */; };
+		C2907FFB2327284D001891F1 /* get_metadata.rb in Resources */ = {isa = PBXBuildFile; fileRef = C2907FAE2322FDB3001891F1 /* get_metadata.rb */; };
+		C2907FFC23272896001891F1 /* install_gems.sh in Resources */ = {isa = PBXBuildFile; fileRef = C2907F562321D73C001891F1 /* install_gems.sh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -42,8 +42,6 @@
 		C2907EE3230E01AB001891F1 /* AsciiDocSpotlightTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AsciiDocSpotlightTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2907EE5230E01AB001891F1 /* AsciiDocSpotlightTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsciiDocSpotlightTests.swift; sourceTree = "<group>"; };
 		C2907EE7230E01AB001891F1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C2907F3B231AF080001891F1 /* AsciiDoc.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AsciiDoc.m; sourceTree = "<group>"; };
-		C2907F3D231AF101001891F1 /* AsciiDoc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsciiDoc.h; sourceTree = "<group>"; };
 		C2907F43231C3D64001891F1 /* AsciiDocRunner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AsciiDocRunner; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2907F45231C3D64001891F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2907F50231C7D01001891F1 /* Ruby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ruby.framework; path = System/Library/Frameworks/Ruby.framework; sourceTree = SDKROOT; };
@@ -80,7 +78,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2907F51231C7D01001891F1 /* Ruby.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2907FFA2327280D001891F1 /* Ruby.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,7 +98,7 @@
 				C2907FF92326E177001891F1 /* AsciiDocImporter.entitlements */,
 				C2907FAD2322FDB3001891F1 /* Resources */,
 				C2907F552321D6ED001891F1 /* Scripts */,
-				C2907F3A231AE6DD001891F1 /* AsciiDoc */,
+				C2907F3A231AE6DD001891F1 /* AsciiDocRunner */,
 				C2805B3F1E159885002CE600 /* AsciiDocSpotlight */,
 				C2907EE4230E01AB001891F1 /* AsciiDocSpotlightTests */,
 				C2907FB523246334001891F1 /* AsciiDocHelper */,
@@ -142,14 +140,12 @@
 			path = AsciiDocSpotlightTests;
 			sourceTree = "<group>";
 		};
-		C2907F3A231AE6DD001891F1 /* AsciiDoc */ = {
+		C2907F3A231AE6DD001891F1 /* AsciiDocRunner */ = {
 			isa = PBXGroup;
 			children = (
-				C2907F3B231AF080001891F1 /* AsciiDoc.m */,
-				C2907F3D231AF101001891F1 /* AsciiDoc.h */,
 				C2907F45231C3D64001891F1 /* main.m */,
 			);
-			path = AsciiDoc;
+			path = AsciiDocRunner;
 			sourceTree = "<group>";
 		};
 		C2907F4F231C7D01001891F1 /* Frameworks */ = {
@@ -251,6 +247,7 @@
 				C2907FB023246334001891F1 /* Sources */,
 				C2907FB123246334001891F1 /* Frameworks */,
 				C2907FB223246334001891F1 /* Resources */,
+				C2907FFD232728A1001891F1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -322,7 +319,6 @@
 			files = (
 				C2907F572321D73C001891F1 /* install_gems.sh in Resources */,
 				C2907EA8230040E6001891F1 /* schema.xml in Resources */,
-				C2907FAF2322FDB3001891F1 /* get_metadata.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,6 +333,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2907FFC23272896001891F1 /* install_gems.sh in Resources */,
+				C2907FFB2327284D001891F1 /* get_metadata.rb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +342,23 @@
 
 /* Begin PBXShellScriptBuildPhase section */
 		C2907F592321D870001891F1 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${SRCROOT}/Scripts/install_gems.sh\n";
+		};
+		C2907FFD232728A1001891F1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -385,7 +400,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2907F4E231C427A001891F1 /* AsciiDoc.m in Sources */,
 				C2907F4D231C402E001891F1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,7 +535,7 @@
 					"DEBUG=1",
 					"PRODUCT_BUNDLE_IDENTIFIER=\"$(PRODUCT_BUNDLE_IDENTIFIER)\"",
 				);
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/AsciiDoc";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/AsciiDocHelper";
 				INFOPLIST_FILE = AsciiDocSpotlight/Info.plist;
 				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
@@ -550,7 +564,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = LYJQR9E3B7;
 				GCC_PREPROCESSOR_DEFINITIONS = "PRODUCT_BUNDLE_IDENTIFIER=\"$(PRODUCT_BUNDLE_IDENTIFIER)\"";
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/AsciiDoc";
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/AsciiDocHelper";
 				INFOPLIST_FILE = AsciiDocSpotlight/Info.plist;
 				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
@@ -631,6 +645,7 @@
 					"RESOURCE_PATH=\"$(SRCROOT)/Resources\"",
 					"SRCROOT=\"$(SRCROOT)\"",
 				);
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/AsciiDocHelper";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -649,6 +664,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LYJQR9E3B7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				HEADER_SEARCH_PATHS = "$(SRCROOT)/AsciiDocHelper";
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -667,6 +683,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = LYJQR9E3B7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"PRODUCT_BUNDLE_IDENTIFIER=\"$(PRODUCT_BUNDLE_IDENTIFIER)\"",
+				);
 				INFOPLIST_FILE = AsciiDocHelper/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
@@ -689,6 +709,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = LYJQR9E3B7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_PREPROCESSOR_DEFINITIONS = "PRODUCT_BUNDLE_IDENTIFIER=\"$(PRODUCT_BUNDLE_IDENTIFIER)\"";
 				INFOPLIST_FILE = AsciiDocHelper/Info.plist;
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_FAST_MATH = YES;
