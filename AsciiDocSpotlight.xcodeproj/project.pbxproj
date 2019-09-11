@@ -13,7 +13,6 @@
 		C2907EE6230E01AB001891F1 /* AsciiDocSpotlightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2907EE5230E01AB001891F1 /* AsciiDocSpotlightTests.swift */; };
 		C2907EF1230F4D50001891F1 /* AsciiDocImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290AB3A1E1691A7009EF87B /* AsciiDocImporter.swift */; };
 		C2907F4D231C402E001891F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2907F45231C3D64001891F1 /* main.m */; };
-		C2907F572321D73C001891F1 /* install_gems.sh in Resources */ = {isa = PBXBuildFile; fileRef = C2907F562321D73C001891F1 /* install_gems.sh */; };
 		C2907FB923246334001891F1 /* AsciiDocHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C2907FB823246334001891F1 /* AsciiDocHelper.m */; };
 		C2907FBB23246334001891F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2907FBA23246334001891F1 /* main.m */; };
 		C2907FFA2327280D001891F1 /* Ruby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2907F50231C7D01001891F1 /* Ruby.framework */; };
@@ -195,7 +194,6 @@
 				C2805B391E159885002CE600 /* Sources */,
 				C2805B3A1E159885002CE600 /* Frameworks */,
 				C2805B3B1E159885002CE600 /* Resources */,
-				C2907F592321D870001891F1 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -317,7 +315,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2907F572321D73C001891F1 /* install_gems.sh in Resources */,
 				C2907EA8230040E6001891F1 /* schema.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -341,23 +338,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		C2907F592321D870001891F1 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "${SRCROOT}/Scripts/install_gems.sh\n";
-		};
 		C2907FFD232728A1001891F1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
