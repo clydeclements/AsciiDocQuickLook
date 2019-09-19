@@ -11,9 +11,23 @@
 		C2805B441E159885002CE600 /* GetMetadataForFile.m in Sources */ = {isa = PBXBuildFile; fileRef = C2805B431E159885002CE600 /* GetMetadataForFile.m */; };
 		C2907EA8230040E6001891F1 /* schema.xml in Resources */ = {isa = PBXBuildFile; fileRef = C2907EA7230040E6001891F1 /* schema.xml */; };
 		C2907EE6230E01AB001891F1 /* AsciiDocSpotlightTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2907EE5230E01AB001891F1 /* AsciiDocSpotlightTests.swift */; };
-		C2907EF1230F4D50001891F1 /* AsciiDocImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290AB3A1E1691A7009EF87B /* AsciiDocImporter.swift */; };
 		C2907F4D231C402E001891F1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C2907F45231C3D64001891F1 /* main.m */; };
+		C2907FFF23296295001891F1 /* AsciiDocImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290AB3A1E1691A7009EF87B /* AsciiDocImporter.swift */; };
+		C2E9B674233269B000962F58 /* AsciiDocImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290AB3A1E1691A7009EF87B /* AsciiDocImporter.swift */; };
+		C2E9B6D623329B9200962F58 /* AsciiDocTools.h in Headers */ = {isa = PBXBuildFile; fileRef = C2E9B6D423329B9200962F58 /* AsciiDocTools.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C2E9B6DA23329BF900962F58 /* AsciiDocImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C290AB3A1E1691A7009EF87B /* AsciiDocImporter.swift */; };
+		C2E9B6DD23329C1100962F58 /* AsciiDocTools.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C2E9B6D223329B9200962F58 /* AsciiDocTools.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C2E9B6DB23329C0900962F58 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C2805B351E159885002CE600 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C2E9B6D123329B9200962F58;
+			remoteInfo = AsciiDocFramework;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		C2907F41231C3D64001891F1 /* CopyFiles */ = {
@@ -39,8 +53,15 @@
 		C2907F43231C3D64001891F1 /* AsciiDocRunner */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = AsciiDocRunner; sourceTree = BUILT_PRODUCTS_DIR; };
 		C2907F45231C3D64001891F1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C2907F50231C7D01001891F1 /* Ruby.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Ruby.framework; path = System/Library/Frameworks/Ruby.framework; sourceTree = SDKROOT; };
-		C290AB391E1691A7009EF87B /* AsciiDoc-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AsciiDoc-Bridging-Header.h"; sourceTree = "<group>"; };
 		C290AB3A1E1691A7009EF87B /* AsciiDocImporter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsciiDocImporter.swift; sourceTree = "<group>"; };
+		C2E9B6BB2332764D00962F58 /* GetMetadataForFile.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GetMetadataForFile.m; sourceTree = "<group>"; };
+		C2E9B6BC2332764D00962F58 /* main.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
+		C2E9B6BD2332764D00962F58 /* AsciiDocImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsciiDocImporter.swift; sourceTree = "<group>"; };
+		C2E9B6BE2332764D00962F58 /* schema.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = schema.xml; sourceTree = "<group>"; };
+		C2E9B6BF2332764D00962F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C2E9B6D223329B9200962F58 /* AsciiDocTools.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AsciiDocTools.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2E9B6D423329B9200962F58 /* AsciiDocTools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AsciiDocTools.h; sourceTree = "<group>"; };
+		C2E9B6D523329B9200962F58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +76,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2E9B6DD23329C1100962F58 /* AsciiDocTools.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		C2907F40231C3D64001891F1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C2E9B6CF23329B9200962F58 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -74,6 +103,7 @@
 				C2907F3A231AE6DD001891F1 /* AsciiDocRunner */,
 				C2805B3F1E159885002CE600 /* AsciiDocSpotlight */,
 				C2907EE4230E01AB001891F1 /* AsciiDocSpotlightTests */,
+				C2E9B6D323329B9200962F58 /* AsciiDocTools */,
 				C2805B3E1E159885002CE600 /* Products */,
 				C2907F4F231C7D01001891F1 /* Frameworks */,
 			);
@@ -85,6 +115,7 @@
 				C2805B3D1E159885002CE600 /* AsciiDocImporter.mdimporter */,
 				C2907EE3230E01AB001891F1 /* AsciiDocSpotlightTests.xctest */,
 				C2907F43231C3D64001891F1 /* AsciiDocRunner */,
+				C2E9B6D223329B9200962F58 /* AsciiDocTools.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -96,7 +127,6 @@
 				C2805B431E159885002CE600 /* GetMetadataForFile.m */,
 				C2805B491E159885002CE600 /* Info.plist */,
 				C2805B411E159885002CE600 /* main.c */,
-				C290AB391E1691A7009EF87B /* AsciiDoc-Bridging-Header.h */,
 				C2907EA7230040E6001891F1 /* schema.xml */,
 			);
 			path = AsciiDocSpotlight;
@@ -122,12 +152,45 @@
 		C2907F4F231C7D01001891F1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C2E9B6BA2332764D00962F58 /* AsciiDocSpotlight */,
 				C2907F50231C7D01001891F1 /* Ruby.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C2E9B6BA2332764D00962F58 /* AsciiDocSpotlight */ = {
+			isa = PBXGroup;
+			children = (
+				C2E9B6BB2332764D00962F58 /* GetMetadataForFile.m */,
+				C2E9B6BC2332764D00962F58 /* main.c */,
+				C2E9B6BD2332764D00962F58 /* AsciiDocImporter.swift */,
+				C2E9B6BE2332764D00962F58 /* schema.xml */,
+				C2E9B6BF2332764D00962F58 /* Info.plist */,
+			);
+			path = AsciiDocSpotlight;
+			sourceTree = "<group>";
+		};
+		C2E9B6D323329B9200962F58 /* AsciiDocTools */ = {
+			isa = PBXGroup;
+			children = (
+				C2E9B6D423329B9200962F58 /* AsciiDocTools.h */,
+				C2E9B6D523329B9200962F58 /* Info.plist */,
+			);
+			path = AsciiDocTools;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C2E9B6CD23329B9200962F58 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2E9B6D623329B9200962F58 /* AsciiDocTools.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		C2805B3C1E159885002CE600 /* AsciiDocImporter */ = {
@@ -158,6 +221,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C2E9B6DC23329C0900962F58 /* PBXTargetDependency */,
 			);
 			name = AsciiDocSpotlightTests;
 			productName = AsciiDocSpotlightTests;
@@ -180,6 +244,24 @@
 			productName = AsciiDocRunner;
 			productReference = C2907F43231C3D64001891F1 /* AsciiDocRunner */;
 			productType = "com.apple.product-type.tool";
+		};
+		C2E9B6D123329B9200962F58 /* AsciiDocTools */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C2E9B6D723329B9200962F58 /* Build configuration list for PBXNativeTarget "AsciiDocTools" */;
+			buildPhases = (
+				C2E9B6CD23329B9200962F58 /* Headers */,
+				C2E9B6CE23329B9200962F58 /* Sources */,
+				C2E9B6CF23329B9200962F58 /* Frameworks */,
+				C2E9B6D023329B9200962F58 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AsciiDocTools;
+			productName = AsciiDocFramework;
+			productReference = C2E9B6D223329B9200962F58 /* AsciiDocTools.framework */;
+			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
@@ -207,6 +289,11 @@
 						DevelopmentTeam = LYJQR9E3B7;
 						ProvisioningStyle = Automatic;
 					};
+					C2E9B6D123329B9200962F58 = {
+						CreatedOnToolsVersion = 10.3;
+						DevelopmentTeam = LYJQR9E3B7;
+						ProvisioningStyle = Automatic;
+					};
 				};
 			};
 			buildConfigurationList = C2805B381E159885002CE600 /* Build configuration list for PBXProject "AsciiDocSpotlight" */;
@@ -225,6 +312,7 @@
 				C2805B3C1E159885002CE600 /* AsciiDocImporter */,
 				C2907EE2230E01AB001891F1 /* AsciiDocSpotlightTests */,
 				C2907F42231C3D64001891F1 /* AsciiDocRunner */,
+				C2E9B6D123329B9200962F58 /* AsciiDocTools */,
 			);
 		};
 /* End PBXProject section */
@@ -245,6 +333,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C2E9B6D023329B9200962F58 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -253,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2805B421E159885002CE600 /* main.c in Sources */,
+				C2E9B674233269B000962F58 /* AsciiDocImporter.swift in Sources */,
 				C2805B441E159885002CE600 /* GetMetadataForFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -261,7 +357,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C2907EF1230F4D50001891F1 /* AsciiDocImporter.swift in Sources */,
 				C2907EE6230E01AB001891F1 /* AsciiDocSpotlightTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -270,11 +365,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2907FFF23296295001891F1 /* AsciiDocImporter.swift in Sources */,
 				C2907F4D231C402E001891F1 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C2E9B6CE23329B9200962F58 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C2E9B6DA23329BF900962F58 /* AsciiDocImporter.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C2E9B6DC23329C0900962F58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C2E9B6D123329B9200962F58 /* AsciiDocTools */;
+			targetProxy = C2E9B6DB23329C0900962F58 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		C2805B4A1E159885002CE600 /* Debug */ = {
@@ -396,7 +508,6 @@
 					"DEBUG=1",
 					"PRODUCT_BUNDLE_IDENTIFIER=\"$(PRODUCT_BUNDLE_IDENTIFIER)\"",
 				);
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/AsciiDocHelper";
 				INFOPLIST_FILE = AsciiDocSpotlight/Info.plist;
 				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
@@ -406,7 +517,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocSpotlight/AsciiDoc-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = mdimporter;
@@ -425,7 +536,6 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = LYJQR9E3B7;
 				GCC_PREPROCESSOR_DEFINITIONS = "PRODUCT_BUNDLE_IDENTIFIER=\"$(PRODUCT_BUNDLE_IDENTIFIER)\"";
-				HEADER_SEARCH_PATHS = "$(SRCROOT)/AsciiDocHelper";
 				INFOPLIST_FILE = AsciiDocSpotlight/Info.plist;
 				INSTALL_PATH = "@executable_path/../Contents/Library/Spotlight";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @loader_path/../Frameworks";
@@ -435,7 +545,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "AsciiDocSpotlight/AsciiDoc-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				WRAPPER_EXTENSION = mdimporter;
 			};
@@ -461,6 +571,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocSpotlightTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/AsciiDocSpotlight";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
@@ -484,6 +595,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocSpotlightTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_INCLUDE_PATHS = "$(SRCROOT)/AsciiDocSpotlight";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 			};
@@ -511,6 +623,9 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "AsciiDocImporter-Swift.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -529,6 +644,76 @@
 				MACOSX_DEPLOYMENT_TARGET = 10.12;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_INTERFACE_HEADER_NAME = "AsciiDocImporter-Swift.h";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		C2E9B6D823329B9200962F58 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = LYJQR9E3B7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AsciiDocTools/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocTools;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C2E9B6D923329B9200962F58 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = LYJQR9E3B7;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_VERSION = A;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = AsciiDocTools/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = ca.bluemist2.AsciiDocTools;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -567,6 +752,15 @@
 			buildConfigurations = (
 				C2907F48231C3D64001891F1 /* Debug */,
 				C2907F49231C3D64001891F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C2E9B6D723329B9200962F58 /* Build configuration list for PBXNativeTarget "AsciiDocTools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C2E9B6D823329B9200962F58 /* Debug */,
+				C2E9B6D923329B9200962F58 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

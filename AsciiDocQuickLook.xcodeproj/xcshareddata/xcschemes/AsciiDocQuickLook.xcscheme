@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C2907FB323246334001891F1"
-               BuildableName = "AsciiDocHelper.xpc"
-               BlueprintName = "AsciiDocHelper"
-               ReferencedContainer = "container:AsciiDocSpotlight.xcodeproj">
+               BlueprintIdentifier = "C2D158E81D1B1AF2009BC66B"
+               BuildableName = "AsciiDoc.qlgenerator"
+               BlueprintName = "AsciiDoc"
+               ReferencedContainer = "container:AsciiDocQuickLook.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -42,16 +42,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C2907FB323246334001891F1"
-            BuildableName = "AsciiDocHelper.xpc"
-            BlueprintName = "AsciiDocHelper"
-            ReferencedContainer = "container:AsciiDocSpotlight.xcodeproj">
+            BlueprintIdentifier = "C2D158E81D1B1AF2009BC66B"
+            BuildableName = "AsciiDoc.qlgenerator"
+            BlueprintName = "AsciiDoc"
+            ReferencedContainer = "container:AsciiDocQuickLook.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -64,10 +63,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C2907FB323246334001891F1"
-            BuildableName = "AsciiDocHelper.xpc"
-            BlueprintName = "AsciiDocHelper"
-            ReferencedContainer = "container:AsciiDocSpotlight.xcodeproj">
+            BlueprintIdentifier = "C2D158E81D1B1AF2009BC66B"
+            BuildableName = "AsciiDoc.qlgenerator"
+            BlueprintName = "AsciiDoc"
+            ReferencedContainer = "container:AsciiDocQuickLook.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

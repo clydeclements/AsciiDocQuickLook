@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import AsciiDoc
+@testable import AsciiDocTools
 
 class AsciiDocSpotlightTests: XCTestCase {
 
@@ -19,16 +19,14 @@ class AsciiDocSpotlightTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testDoc() {
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testDocWithTitleAuthorAndDates() {
         let doc = """
             = Title
             :author: Author Name
             :created: 2009-12-25
             :revdate: 2010-01-01
             """
-        let docData = doc.data(using: .utf8)!
-        let metadata = getAsciiDocMetadata(fromData: docData)
+        let metadata = getMetadata(fromContents: doc)
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
         dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
@@ -36,5 +34,49 @@ class AsciiDocSpotlightTests: XCTestCase {
         XCTAssertEqual(metadata.authors, ["Author Name"])
         XCTAssertEqual(metadata.contentCreationDate!, dateFormatter.date(from: "2009-12-25")!)
         XCTAssertEqual(metadata.contentModificationDate!, dateFormatter.date(from: "2010-01-01")!)
+    }
+
+    func testDocWithTitleAuthorAndRevisionDate() {
+        let doc = """
+            = Title
+            Author Name
+            2010-01-01
+            """
+        let metadata = getMetadata(fromContents: doc)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        XCTAssertEqual(metadata.title, "Title")
+        XCTAssertEqual(metadata.authors, ["Author Name"])
+        XCTAssertEqual(metadata.contentModificationDate, dateFormatter.date(from: "2010-01-01"))
+    }
+
+    func testDocWithTitleAuthorAndRevisionInfo() {
+        let doc = """
+            = Title
+            Author Name
+            v0.1, 2010-01-01
+            """
+        let metadata = getMetadata(fromContents: doc)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        XCTAssertEqual(metadata.title, "Title")
+        XCTAssertEqual(metadata.authors, ["Author Name"])
+        XCTAssertEqual(metadata.contentModificationDate, dateFormatter.date(from: "2010-01-01"))
+        XCTAssertEqual(metadata.version, "v0.1")
+    }
+
+    func testDocWithTitleAuthorAndUid() {
+        let doc = """
+            = Title
+            :uid: abc-123
+            """
+        let metadata = getMetadata(fromContents: doc)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.timeZone = TimeZone(secondsFromGMT: 0)
+        XCTAssertEqual(metadata.title, "Title")
+        XCTAssertEqual(metadata.identifier, "abc-123")
     }
 }

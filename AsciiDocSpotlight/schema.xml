@@ -12,19 +12,23 @@
                 kMDItemAuthors
                 kMDItemContentCreationDate
                 kMDItemContentModificationDate
+                kMDItemIdentifier
                 kMDItemKeywords
                 kMDItemKind
                 kMDItemTextContent
                 kMDItemTitle
+                kMDItemVersion
             </allattrs>
             <displayattrs>
                 kMDItemAuthors
                 kMDItemContentCreationDate
                 kMDItemContentModificationDate
+                kMDItemIdentifier
                 kMDItemKeywords
                 kMDItemKind
                 kMDItemTextContent
                 kMDItemTitle
+                kMDItemVersion
             </displayattrs>
         </type>
     </types>

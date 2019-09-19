@@ -7,42 +7,22 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "AsciiDocHelperProtocol.h"
+#import "AsciiDocImporter-Swift.h"
 
 #define NSStringize_helper(x) #x
 #define NSStringize(x) @NSStringize_helper(x)
 
 int main(int argc, const char * argv[]) {
+    Boolean status = FALSE;
     @autoreleasepool {
         NSString *srcRoot = NSStringize(SRCROOT);
         //NSString* path = [srcRoot stringByAppendingPathComponent:@"Tests/modèle.adoc"];
-        NSString* path = [srcRoot stringByAppendingPathComponent:@"README.adoc"];
-
-        NSXPCConnection *helperConnection = [[NSXPCConnection alloc]
-                                             initWithMachServiceName:@"ca.bluemist2.AsciiDocHelper"
-                                                             options:0];
-        helperConnection.remoteObjectInterface = [NSXPCInterface interfaceWithProtocol:@protocol(AsciiDocHelperProtocol)];
-        // TODO: Set interruption handler.
-        //helperConnection.interruptionHandler = <#^(void)#>
-        // TODO: Set invalidation handler?
-        //helperConnection.invalidationHandler = <#^(void)#>
-        [helperConnection resume];
-        NSLog(@"Connection to AsciiDocHelper established");
-
-        id remoteObject = [helperConnection remoteObjectProxyWithErrorHandler:^(NSError *error) {
-            NSLog(@"Error in AsciiDocHelper connection: %@", [error debugDescription]);
-        }];
-        [remoteObject getMetadata:path withReply:^(NSData *data) {
-            // We have received a response. Update our text field, but do it on the main thread.
-            NSLog(@"Reply received");
-            NSDictionary *attributes = (NSDictionary *)[NSKeyedUnarchiver unarchiveObjectWithData:data];
-            NSLog(@"Attributes: %@", attributes);
-        }];
+        NSString* path = [srcRoot stringByAppendingPathComponent:@"Tests/test1.adoc"];
+        AsciiDocImporter *importer = [[AsciiDocImporter alloc] init];
+        NSMutableDictionary *attributes = [[NSMutableDictionary alloc] init];
+        status = [importer importFileAtPath:path attributes:attributes];
         
-        NSLog(@"Waiting for response from AsciiDocHelper");
-        [NSThread sleepForTimeInterval:5.0];
-        NSLog(@"Closing connection to AsciiDocHelper");
-        [helperConnection invalidate];
+        NSLog(@"Metadata attributes: %@", attributes);
     }
-    return 0;
+    return status == TRUE ? 0 : 1;
 }
