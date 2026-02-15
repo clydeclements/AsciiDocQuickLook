@@ -8,6 +8,10 @@
 :url-qlswift: https://github.com/lexrus/QLSwift
 
 
+== Deprecated
+
+This project is no longer maintained and is archived for historical purposes.
+
 == Introduction
 
 This is a Quick Look plug-in for {url-what-is-asciidoc}[AsciiDoc] format files.
